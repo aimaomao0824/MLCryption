@@ -6,8 +6,8 @@
 //  Copyright © 2018年 作者MannersLee. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@interface MLCryption : NSObject
-
-@end
+#import "NSObject+MLCryptionBase64.h"
+#import "NSObject+MLCryptionMD5.h"
+#import "NSObject+MLCryptionDES.h"
+#import "NSObject+MLCryptionAES.h"
+#import "NSObject+MLCryptionRSA.h"
