@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5897312D1FFBD538003318AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5897312C1FFBD538003318AF /* main.m */; };
+		589731301FFBD538003318AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5897312F1FFBD538003318AF /* AppDelegate.m */; };
+		589731331FFBD538003318AF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589731321FFBD538003318AF /* ViewController.m */; };
+		589731361FFBD538003318AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 589731341FFBD538003318AF /* Main.storyboard */; };
+		589731381FFBD538003318AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 589731371FFBD538003318AF /* Assets.xcassets */; };
+		5897313B1FFBD538003318AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 589731391FFBD538003318AF /* LaunchScreen.storyboard */; };
+		589731461FFBD539003318AF /* MLCryptionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 589731451FFBD539003318AF /* MLCryptionDemoTests.m */; };
+		589731511FFBD539003318AF /* MLCryptionDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 589731501FFBD539003318AF /* MLCryptionDemoUITests.m */; };
+		589731601FFBD5EB003318AF /* MLCryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 5897315F1FFBD5EB003318AF /* MLCryption.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		589731421FFBD539003318AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 589731201FFBD538003318AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 589731271FFBD538003318AF;
+			remoteInfo = MLCryptionDemo;
+		};
+		5897314D1FFBD539003318AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 589731201FFBD538003318AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 589731271FFBD538003318AF;
+			remoteInfo = MLCryptionDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		589731281FFBD538003318AF /* MLCryptionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLCryptionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5897312C1FFBD538003318AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5897312E1FFBD538003318AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5897312F1FFBD538003318AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		589731311FFBD538003318AF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		589731321FFBD538003318AF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		589731351FFBD538003318AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		589731371FFBD538003318AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5897313A1FFBD538003318AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5897313C1FFBD538003318AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		589731411FFBD539003318AF /* MLCryptionDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MLCryptionDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		589731451FFBD539003318AF /* MLCryptionDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLCryptionDemoTests.m; sourceTree = "<group>"; };
+		589731471FFBD539003318AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5897314C1FFBD539003318AF /* MLCryptionDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MLCryptionDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		589731501FFBD539003318AF /* MLCryptionDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLCryptionDemoUITests.m; sourceTree = "<group>"; };
+		589731521FFBD539003318AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5897315E1FFBD5EB003318AF /* MLCryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLCryption.h; path = ../../MLCryption/MLCryption.h; sourceTree = "<group>"; };
+		5897315F1FFBD5EB003318AF /* MLCryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLCryption.m; path = ../../MLCryption/MLCryption.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		589731251FFBD538003318AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5897313E1FFBD539003318AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		589731491FFBD539003318AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5897311F1FFBD538003318AF = {
+			isa = PBXGroup;
+			children = (
+				5897312A1FFBD538003318AF /* MLCryptionDemo */,
+				589731441FFBD539003318AF /* MLCryptionDemoTests */,
+				5897314F1FFBD539003318AF /* MLCryptionDemoUITests */,
+				589731291FFBD538003318AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		589731291FFBD538003318AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				589731281FFBD538003318AF /* MLCryptionDemo.app */,
+				589731411FFBD539003318AF /* MLCryptionDemoTests.xctest */,
+				5897314C1FFBD539003318AF /* MLCryptionDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5897312A1FFBD538003318AF /* MLCryptionDemo */ = {
+			isa = PBXGroup;
+			children = (
+				5897312E1FFBD538003318AF /* AppDelegate.h */,
+				5897312F1FFBD538003318AF /* AppDelegate.m */,
+				589731311FFBD538003318AF /* ViewController.h */,
+				589731321FFBD538003318AF /* ViewController.m */,
+				589731341FFBD538003318AF /* Main.storyboard */,
+				589731371FFBD538003318AF /* Assets.xcassets */,
+				589731391FFBD538003318AF /* LaunchScreen.storyboard */,
+				5897313C1FFBD538003318AF /* Info.plist */,
+				5897312B1FFBD538003318AF /* Supporting Files */,
+				5897315E1FFBD5EB003318AF /* MLCryption.h */,
+				5897315F1FFBD5EB003318AF /* MLCryption.m */,
+			);
+			path = MLCryptionDemo;
+			sourceTree = "<group>";
+		};
+		5897312B1FFBD538003318AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5897312C1FFBD538003318AF /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		589731441FFBD539003318AF /* MLCryptionDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				589731451FFBD539003318AF /* MLCryptionDemoTests.m */,
+				589731471FFBD539003318AF /* Info.plist */,
+			);
+			path = MLCryptionDemoTests;
+			sourceTree = "<group>";
+		};
+		5897314F1FFBD539003318AF /* MLCryptionDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				589731501FFBD539003318AF /* MLCryptionDemoUITests.m */,
+				589731521FFBD539003318AF /* Info.plist */,
+			);
+			path = MLCryptionDemoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		589731271FFBD538003318AF /* MLCryptionDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 589731551FFBD539003318AF /* Build configuration list for PBXNativeTarget "MLCryptionDemo" */;
+			buildPhases = (
+				589731241FFBD538003318AF /* Sources */,
+				589731251FFBD538003318AF /* Frameworks */,
+				589731261FFBD538003318AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MLCryptionDemo;
+			productName = MLCryptionDemo;
+			productReference = 589731281FFBD538003318AF /* MLCryptionDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		589731401FFBD539003318AF /* MLCryptionDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 589731581FFBD539003318AF /* Build configuration list for PBXNativeTarget "MLCryptionDemoTests" */;
+			buildPhases = (
+				5897313D1FFBD539003318AF /* Sources */,
+				5897313E1FFBD539003318AF /* Frameworks */,
+				5897313F1FFBD539003318AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				589731431FFBD539003318AF /* PBXTargetDependency */,
+			);
+			name = MLCryptionDemoTests;
+			productName = MLCryptionDemoTests;
+			productReference = 589731411FFBD539003318AF /* MLCryptionDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5897314B1FFBD539003318AF /* MLCryptionDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5897315B1FFBD539003318AF /* Build configuration list for PBXNativeTarget "MLCryptionDemoUITests" */;
+			buildPhases = (
+				589731481FFBD539003318AF /* Sources */,
+				589731491FFBD539003318AF /* Frameworks */,
+				5897314A1FFBD539003318AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5897314E1FFBD539003318AF /* PBXTargetDependency */,
+			);
+			name = MLCryptionDemoUITests;
+			productName = MLCryptionDemoUITests;
+			productReference = 5897314C1FFBD539003318AF /* MLCryptionDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		589731201FFBD538003318AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "深圳市满泰科技有限公司";
+				TargetAttributes = {
+					589731271FFBD538003318AF = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					589731401FFBD539003318AF = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 589731271FFBD538003318AF;
+					};
+					5897314B1FFBD539003318AF = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 589731271FFBD538003318AF;
+					};
+				};
+			};
+			buildConfigurationList = 589731231FFBD538003318AF /* Build configuration list for PBXProject "MLCryptionDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5897311F1FFBD538003318AF;
+			productRefGroup = 589731291FFBD538003318AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				589731271FFBD538003318AF /* MLCryptionDemo */,
+				589731401FFBD539003318AF /* MLCryptionDemoTests */,
+				5897314B1FFBD539003318AF /* MLCryptionDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		589731261FFBD538003318AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5897313B1FFBD538003318AF /* LaunchScreen.storyboard in Resources */,
+				589731381FFBD538003318AF /* Assets.xcassets in Resources */,
+				589731361FFBD538003318AF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5897313F1FFBD539003318AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5897314A1FFBD539003318AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		589731241FFBD538003318AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				589731601FFBD5EB003318AF /* MLCryption.m in Sources */,
+				589731331FFBD538003318AF /* ViewController.m in Sources */,
+				589731301FFBD538003318AF /* AppDelegate.m in Sources */,
+				5897312D1FFBD538003318AF /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5897313D1FFBD539003318AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				589731461FFBD539003318AF /* MLCryptionDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		589731481FFBD539003318AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				589731511FFBD539003318AF /* MLCryptionDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		589731431FFBD539003318AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 589731271FFBD538003318AF /* MLCryptionDemo */;
+			targetProxy = 589731421FFBD539003318AF /* PBXContainerItemProxy */;
+		};
+		5897314E1FFBD539003318AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 589731271FFBD538003318AF /* MLCryptionDemo */;
+			targetProxy = 5897314D1FFBD539003318AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		589731341FFBD538003318AF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				589731351FFBD538003318AF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		589731391FFBD538003318AF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5897313A1FFBD538003318AF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		589731531FFBD539003318AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		589731541FFBD539003318AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		589731561FFBD539003318AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MLCryptionDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mantai.com.MLCryptionDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		589731571FFBD539003318AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MLCryptionDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mantai.com.MLCryptionDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		589731591FFBD539003318AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MLCryptionDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mantai.com.MLCryptionDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MLCryptionDemo.app/MLCryptionDemo";
+			};
+			name = Debug;
+		};
+		5897315A1FFBD539003318AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MLCryptionDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mantai.com.MLCryptionDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MLCryptionDemo.app/MLCryptionDemo";
+			};
+			name = Release;
+		};
+		5897315C1FFBD539003318AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MLCryptionDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mantai.com.MLCryptionDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MLCryptionDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		5897315D1FFBD539003318AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MLCryptionDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = mantai.com.MLCryptionDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MLCryptionDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		589731231FFBD538003318AF /* Build configuration list for PBXProject "MLCryptionDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				589731531FFBD539003318AF /* Debug */,
+				589731541FFBD539003318AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		589731551FFBD539003318AF /* Build configuration list for PBXNativeTarget "MLCryptionDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				589731561FFBD539003318AF /* Debug */,
+				589731571FFBD539003318AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		589731581FFBD539003318AF /* Build configuration list for PBXNativeTarget "MLCryptionDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				589731591FFBD539003318AF /* Debug */,
+				5897315A1FFBD539003318AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5897315B1FFBD539003318AF /* Build configuration list for PBXNativeTarget "MLCryptionDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5897315C1FFBD539003318AF /* Debug */,
+				5897315D1FFBD539003318AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 589731201FFBD538003318AF /* Project object */;
+}
