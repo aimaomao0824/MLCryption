@@ -23,6 +23,28 @@
     
 }
 
+- (void)testBase64_Data
+{
+    // 获取需要加密文件的二进制数据
+    NSData *data = [NSData dataWithContentsOfFile:@"/Users/wangpengfei/Desktop/photo/IMG_5551.jpg"];
+    
+    // 或 base64EncodedStringWithOptions
+    NSData *base64Data = [data base64EncodedDataWithOptions:0];
+    
+    // 将加密后的文件存储到桌面
+    [base64Data writeToFile:@"/Users/wangpengfei/Desktop/123" atomically:YES];
+    
+//    // 获得加密后的二进制数据
+//    NSData *base64Data = [NSData dataWithContentsOfFile:@"/Users/wangpengfei/Desktop/123"];
+//    
+//    // 解密 base64 数据
+//    NSData *baseData = [[NSData alloc] initWithBase64EncodedData:base64Data options:0];
+//    
+//    // 写入桌面
+//    [baseData writeToFile:@"/Users/wangpengfei/Desktop/IMG_5551.jpg" atomically:YES];
+    
+}
+
 -(void)testBase64_String
 {
 //    NSString *str = @"MannersLee";
