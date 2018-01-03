@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 //    [NSString ml_test];
-    [NSString ml];
+//    [NSString ml];
 }
 
 - (void)didReceiveMemoryWarning {
