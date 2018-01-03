@@ -18,30 +18,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self testBase64_String];
-    
+//    [self testBase64_String];
+    [self testBase64_Data];
     
 }
 
 - (void)testBase64_Data
 {
     // 获取需要加密文件的二进制数据
-    NSData *data = [NSData dataWithContentsOfFile:@"/Users/wangpengfei/Desktop/photo/IMG_5551.jpg"];
+    NSData *data = [NSData dataWithContentsOfFile:@"/Users/Manners/Desktop/timg11.jpg"];
     
     // 或 base64EncodedStringWithOptions
     NSData *base64Data = [data base64EncodedDataWithOptions:0];
     
     // 将加密后的文件存储到桌面
-    [base64Data writeToFile:@"/Users/wangpengfei/Desktop/123" atomically:YES];
+    [base64Data writeToFile:@"/Users/Manners/Desktop/45611.jpg" atomically:YES];
     
 //    // 获得加密后的二进制数据
-//    NSData *base64Data = [NSData dataWithContentsOfFile:@"/Users/wangpengfei/Desktop/123"];
-//    
+    NSData *base64DataDE = [NSData dataWithContentsOfFile:@"/Users/Manners/Desktop/45611"];
+//
 //    // 解密 base64 数据
-//    NSData *baseData = [[NSData alloc] initWithBase64EncodedData:base64Data options:0];
-//    
+    NSData *baseDataDE = [[NSData alloc] initWithBase64EncodedData:base64DataDE options:0];
+//
 //    // 写入桌面
-//    [baseData writeToFile:@"/Users/wangpengfei/Desktop/IMG_5551.jpg" atomically:YES];
+    [baseDataDE writeToFile:@"/Users/Manners/Desktop/解密图片11.jpg" atomically:YES];
     
 }
 
