@@ -49,10 +49,10 @@
  *
  *  @return 返回原文
  */
-+ (NSString *)ml_decodeStringUseBase64:(NSString *)plainString;
++ (NSString *)ml_decodeStringUseBase64:(NSString *)cipherString;
 - (NSString *)ml_decodeStringUseBase64;
 /** 返回NSData数据 */
-+ (NSData *)ml_decodeDataUseBase64:(NSString *)plainString;
++ (NSData *)ml_decodeDataUseBase64:(NSString *)cipherString;
 - (NSData *)ml_decodeDataUseBase64;
 
 
@@ -82,10 +82,10 @@
  *
  *  @return 返回原文
  */
-+ (NSString *)ml_decodeStringUseBase64:(NSData *)plainData;
++ (NSString *)ml_decodeStringUseBase64:(NSData *)cipherData;
 - (NSString *)ml_decodeStringUseBase64;
 /** 返回NSData数据 */
-+ (NSData *)ml_decodeDataUseBase64:(NSData *)plainData;
++ (NSData *)ml_decodeDataUseBase64:(NSData *)cipherData;
 - (NSData *)ml_decodeDataUseBase64;
 
 @end
