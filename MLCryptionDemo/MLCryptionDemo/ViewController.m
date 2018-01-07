@@ -17,23 +17,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-//    [self testBase64_String];
-    [self testBase64_Data];
+
     
 }
 
+# pragma mark - 1.DES加密和解密
 -(void)testDES
 {
-//    NSString *str = @"MannersLee";
-    NSString *str = @"中华人民共和国";
-    NSString *key = @"123456789012345678901234";
-    const Byte iv[] = {1,2,3,4,5,6,7,8};
-    //    NSString *crypStr = [NSString ml_encryptUseDes:str key:key iv: iv];
-    NSString *crypStr = [str ml_encryptUseDesKey:key iv:iv];
-    NSString *deCrypStr = [crypStr ml_decryptUseDesKey:key iv:iv];
-    //    NSString *deCrypStr = [NSString ml_decryptUseDes:crypStr key:key iv:iv];
-    NSLog(@"DES-->>原文：%@，key：%@，iv：%s，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);    
+//    NSString *str = @"满泰科技";
+//    NSString *key = @"123456789012345678901234";
+//    //    const void *iv = @"12345670";
+//    //    const void *iv = nil;
+//    const Byte iv[] = {1,2,3,4,5,6,7,8};
+
+//    MLCryption_DES *cryption = [[MLCryption_DES alloc] initWithDES_Mode:kMLModeCBC MLPadding:MLPKCS7Padding key:key iv:iv ivMode:ivByte];
+//    NSString *crypStr = [cryption ml_encryptUseDes_StrToStr:str];
+//    NSString *deCrypStr = [cryption ml_decryptUseDes_StrToStr:crypStr];
+//    NSLog(@"DES-->>原文：%@，key：%@，iv：%s，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
 }
 
 /** 将字符串编码测试 */
@@ -96,8 +96,7 @@
         NSString *cryStr = [data ml_encodeStringUseBase64];
     
     NSString *decStr = [cryStr ml_decodeStringUseBase64];
-    NSLog(@"Base64-->>原文：%@，加密后：%@,解密后：%@,data：%@",str,cryStr,decStr,data);
-    
+    NSLog(@"Base64-->>原文：%@，加密后：%@,解密后：%@,data：%@",str,cryStr,decStr,data);    
 }
 
 @end
