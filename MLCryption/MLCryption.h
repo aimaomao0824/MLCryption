@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "MLCryption_DES.h"
+#import "MLCryption_DES.h"
 //#import "MLCryption_3DES.h"
 #import "NSObject+MLCryptionBase64.h"
 

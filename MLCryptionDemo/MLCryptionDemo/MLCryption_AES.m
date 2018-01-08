@@ -12,17 +12,15 @@
 @implementation MLCryption_AES
 
 # pragma mark - 创建AES加密器
-CCCryptorRef cryptor = NULL;
-+ (instancetype)cryptionAES_Mode:(MLMode)MLMode MLPadding:(MLPadding)MLPadding key:(NSString *)key iv:(const void *) iv ivMode:(ivMode)ivMode
+CCCryptorRef cryptorAES = NULL;
++ (instancetype)cryptionAES_key:(NSString *)key iv:(const void *) iv ivMode:(ivMode)ivMode
 {
-    return [[MLCryption_AES alloc] initWithAES_Mode:MLMode MLPadding:MLPadding key:key iv:iv  ivMode:ivMode];
+    return [[MLCryption_AES alloc] initWithAES_key:key iv:iv  ivMode:ivMode];
 }
 
-- (instancetype)initWithAES_Mode:(MLMode)MLMode MLPadding:(MLPadding)MLPadding key:(NSString *)key iv:(const void *)iv ivMode:(ivMode)ivMode
+- (instancetype)initWithAES_key:(NSString *)key iv:(const void *)iv ivMode:(ivMode)ivMode
 {
     if (self = [super init]) {
-        self.MLMode = MLMode;
-        self.MLPadding = MLPadding;
         self.key = key;
         if (ivMode == ivString) {
             self.iv = (const void *)[(__bridge NSString *)iv UTF8String];
@@ -39,7 +37,7 @@ CCCryptorRef cryptor = NULL;
 {
     
     //1.创建加密器CCCryptorRef
-    CCCryptorStatus cryptorStatus = CCCryptorCreateWithMode(kCCEncrypt, self.MLMode, kCCAlgorithmAES, kCCOptionPKCS7Padding, self.iv, [self.key UTF8String], kCCKeySizeAES128, NULL, 0, 0, 0, &cryptor);
+    CCCryptorStatus cryptorStatus = CCCryptorCreateWithMode(kCCEncrypt, self.MLMode, kCCAlgorithmAES, kCCOptionPKCS7Padding, self.iv, [self.key UTF8String], kCCKeySizeAES128, NULL, 0, 0, 0, &cryptorAES);
     if (cryptorStatus!=kCCSuccess) return nil;
     
     size_t bufsize = 0;
@@ -49,22 +47,22 @@ CCCryptorRef cryptor = NULL;
     //2.获取输出数据的最大长度
     //    NSData *textData = [plainText dataUsingEncoding:NSUTF8StringEncoding];
     NSData *textData = plainData;
-    bufsize = CCCryptorGetOutputLength(cryptor, textData.length, true);
+    bufsize = CCCryptorGetOutputLength(cryptorAES, textData.length, true);
     char * buf = (char*)malloc(bufsize);
     bzero(buf, bufsize);
     
     //3.加密处理
-    cryptorStatus = CCCryptorUpdate(cryptor, textData.bytes, textData.length, buf, bufsize, &moved);
+    cryptorStatus = CCCryptorUpdate(cryptorAES, textData.bytes, textData.length, buf, bufsize, &moved);
     total += moved;
     if (cryptorStatus!=kCCSuccess) return nil;
     
     //4.处理最后的数据块
-    cryptorStatus = CCCryptorFinal(cryptor, buf + total, bufsize - total, &moved);
+    cryptorStatus = CCCryptorFinal(cryptorAES, buf + total, bufsize - total, &moved);
     if (cryptorStatus!=kCCSuccess) return nil;
     total += moved;
     
     //5.释放
-    CCCryptorRelease(cryptor);
+    CCCryptorRelease(cryptorAES);
     NSData * retData = [NSData dataWithBytes:buf length:total];
     free(buf);
     //    NSString *ciphertext = [retData base64EncodedStringWithOptions:0];
@@ -76,7 +74,7 @@ CCCryptorRef cryptor = NULL;
 - (NSData *)ml_decryptUseAES_DataToData:(NSData *)cipherData
 {
     //1.创建加密器CCCryptorRef
-    CCCryptorStatus cryptorStatus = CCCryptorCreateWithMode(kCCDecrypt, self.MLMode, kCCAlgorithmAES, kCCOptionPKCS7Padding, self.iv, [self.key UTF8String], kCCKeySizeAES128, NULL, 0, 0, 0, &cryptor);
+    CCCryptorStatus cryptorStatus = CCCryptorCreateWithMode(kCCDecrypt, self.MLMode, kCCAlgorithmAES, kCCOptionPKCS7Padding, self.iv, [self.key UTF8String], kCCKeySizeAES128, NULL, 0, 0, 0, &cryptorAES);
     if (cryptorStatus!=kCCSuccess) return nil;
     
     size_t bufsize = 0;
@@ -86,22 +84,22 @@ CCCryptorRef cryptor = NULL;
     //2.获取输出数据的最大长度
     //    NSData *textData = [[NSData alloc]initWithBase64EncodedString:cipherText options:0];
     NSData *textData = cipherData;
-    bufsize = CCCryptorGetOutputLength(cryptor, textData.length, true);
+    bufsize = CCCryptorGetOutputLength(cryptorAES, textData.length, true);
     char * buf = (char*)malloc(bufsize);
     bzero(buf, bufsize);
     
     //3.加密处理
-    cryptorStatus = CCCryptorUpdate(cryptor, textData.bytes, textData.length, buf, bufsize, &moved);
+    cryptorStatus = CCCryptorUpdate(cryptorAES, textData.bytes, textData.length, buf, bufsize, &moved);
     total += moved;
     if (cryptorStatus!=kCCSuccess) return nil;
     
     //4.处理最后的数据块
-    cryptorStatus = CCCryptorFinal(cryptor, buf + total, bufsize - total, &moved);
+    cryptorStatus = CCCryptorFinal(cryptorAES, buf + total, bufsize - total, &moved);
     if (cryptorStatus!=kCCSuccess) return nil;
     total += moved;
     
     //5.释放
-    CCCryptorRelease(cryptor);
+    CCCryptorRelease(cryptorAES);
     NSData * retData = [NSData dataWithBytes:buf length:total];
     free(buf);
     //    NSString *plainText =[[NSString alloc]initWithData:retData encoding:NSUTF8StringEncoding];
