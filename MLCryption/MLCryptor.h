@@ -10,7 +10,7 @@
 
 @interface MLCryptor : MLCryptionCommon
 
-#pragma mark - 「CBC模式/pkcs7padding填充/Base64输出/utf8编码」加密器初始化方法
+#pragma mark - 加密器初始化方法 「CBC模式/pkcs7padding填充/Base64输出/utf8编码」
 /**
  *  这个模式下初始化的加密器参数默认为->CBC模式/pkcs7padding填充/Base64输出/utf8编码,
  *
@@ -40,9 +40,44 @@
 
 
 #pragma mark - 多参数多模式下加密器初始化方法
-+ (instancetype)cryptorCommonMethodWithAlgorithm:(CCAlgorithm)alg key:(NSString *)key keySize:(MLKeySize)keySize iv:(const void *) iv ivMode:(ivMode)ivMode  ivSize:(MLIvSize)ivSize;
-
-- (instancetype)initCommonMethodWithAlgorithm:(CCAlgorithm)alg key:(NSString *)key keySize:(MLKeySize)keySize iv:(const void *)iv ivMode:(ivMode)ivMode  ivSize:(MLIvSize)ivSize;
+/**
+ *  多参数模式加密器初始化
+ *
+ *  @param mode        加密模式，如CBC,EBC等
+ *  @param alg         加密方式，如AES,DES等
+ *  @param padding     填充方式，如ccPKCS7Padding等
+ *  @param iv          加密向量
+ *  @param ivMode    向量传入模式「NSStirng 或者 Byte」
+ *  @param key         加密密钥
+ *  @param keySize     密钥长度如，kMLKeySizeAES128等
+ *  @param tweak       在XTS模式才有，「其它模式默认为NULL就好」
+ *  @param tweakSize 在XTS模式才有，密钥长度tweakLength等于keySize「其它模式默认为0就好」
+ *  @param numRounds   圆形的数字密码使用，默认为0就好
+ *  @param options     仅在大的存储模式支持，如CTR模式。「其它默认为0」
+ *  @param cryptor     CCCryptorRef类型
+ *
+ *  @return 返回加密器
+ */
++ (instancetype)cryptorCommonMethodWithMode:(CCMode)mode Algorithm:(CCAlgorithm)alg Padding:(CCPadding)padding iv:(const void *)iv ivMode:(ivMode)ivMode key:(NSString *)key keySize:(MLKeySize)keySize tweak:(NSString *)tweak tweakSize:(MLKeySize)tweakSize numRounds:(int)numRounds ModeOptions:(CCModeOptions)options;
+/**
+ *  多参数模式加密器初始化
+ *
+ *  @param mode        加密模式，如CBC,EBC等
+ *  @param alg         加密方式，如AES,DES等
+ *  @param padding     填充方式，如ccPKCS7Padding等
+ *  @param iv          加密向量
+ *  @param ivMode    向量传入模式「NSStirng 或者 Byte」
+ *  @param key         加密密钥
+ *  @param keySize     密钥长度如，kMLKeySizeAES128等
+ *  @param tweak       在XTS模式才有，「其它模式默认为NULL就好」
+ *  @param tweakSize 在XTS模式才有，密钥长度tweakLength等于keySize「其它模式默认为0就好」
+ *  @param numRounds   圆形的数字密码使用，默认为0就好
+ *  @param options     仅在大的存储模式支持，如CTR模式。「其它默认为0」
+ *  @param cryptor     CCCryptorRef类型
+ *
+ *  @return 返回加密器
+ */
+- (instancetype)initCommonMethodWithMode:(CCMode)mode Algorithm:(CCAlgorithm)alg Padding:(CCPadding)padding iv:(const void *)iv ivMode:(ivMode)ivMode key:(NSString *)key keySize:(MLKeySize)keySize tweak:(NSString *)tweak tweakSize:(MLKeySize)tweakSize numRounds:(int)numRounds ModeOptions:(CCModeOptions)options;
 
 
 #pragma mark - 加密和解密方法的调用
