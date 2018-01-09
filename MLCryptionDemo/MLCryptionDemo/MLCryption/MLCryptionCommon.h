@@ -20,18 +20,18 @@
 @property (nonatomic, assign) uint32_t MLMode;
 
 /** MLPadding */
-@property (nonatomic, assign) uint32_t MLPadding;
+@property (nonatomic, assign) CCPadding MLPadding;
 
 /** key */
 @property (nonatomic, copy) NSString *key;
 
-/** MLKeySize */
+/** 密钥的长度位数MLKeySize */
 @property (nonatomic, assign) int keySize;
 
 /** iv */
 @property (nonatomic, assign) const void *iv;
 
-/** ivSize */
+/** 加密向量的长度ivSize */
 @property (nonatomic, assign) int ivSize;
 
 

@@ -13,25 +13,25 @@
 @interface MLCryptionCommon : NSObject
 
 
-/** MLMode */
+/** CCAlgorithm 加密的方法，如AES,DES等 */
 @property (nonatomic, assign) CCAlgorithm alg;
 
-/** MLMode */
-@property (nonatomic, assign) uint32_t MLMode;
+/** 加密模式CCMode，如CBC,EBC等 */
+@property (nonatomic, assign) CCMode mode;
 
-/** MLPadding */
-@property (nonatomic, assign) uint32_t MLPadding;
+/** 填充方式CCPadding 如ccPKCS7Padding，ccNoPadding */
+@property (nonatomic, assign) CCPadding padding;
 
 /** key */
 @property (nonatomic, copy) NSString *key;
 
-/** MLKeySize */
+/** 密钥加密长度MLKeySize */
 @property (nonatomic, assign) int keySize;
 
-/** iv */
+/** 加密向量iv */
 @property (nonatomic, assign) const void *iv;
 
-/** ivSize */
+/** 向量ivSize */
 @property (nonatomic, assign) int ivSize;
 
 
