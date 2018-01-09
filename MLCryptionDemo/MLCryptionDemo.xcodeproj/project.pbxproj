@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0E27B7D31FFF4D28001246F9 /* MLCryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E27B7D21FFF4D28001246F9 /* MLCryption.m */; };
+		584B5CCC2002446D0057D8B0 /* MLCryptionCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 584B5CCB2002446D0057D8B0 /* MLCryptionCommon.m */; };
+		584B5CCF2002456C0057D8B0 /* MLCryption_AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 584B5CCE2002456C0057D8B0 /* MLCryption_AES.m */; };
 		5897312D1FFBD538003318AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5897312C1FFBD538003318AF /* main.m */; };
 		589731301FFBD538003318AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5897312F1FFBD538003318AF /* AppDelegate.m */; };
 		589731331FFBD538003318AF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589731321FFBD538003318AF /* ViewController.m */; };
@@ -16,12 +18,15 @@
 		5897313B1FFBD538003318AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 589731391FFBD538003318AF /* LaunchScreen.storyboard */; };
 		589731461FFBD539003318AF /* MLCryptionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 589731451FFBD539003318AF /* MLCryptionDemoTests.m */; };
 		589731511FFBD539003318AF /* MLCryptionDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 589731501FFBD539003318AF /* MLCryptionDemoUITests.m */; };
-		589731691FFC0F85003318AF /* NSObject+MLCryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 589731681FFC0F85003318AF /* NSObject+MLCryption.m */; };
-		5897316C1FFC11E5003318AF /* NSObject+MLCryptionDES.m in Sources */ = {isa = PBXBuildFile; fileRef = 5897316B1FFC11E5003318AF /* NSObject+MLCryptionDES.m */; };
 		5897316F1FFC12BA003318AF /* NSObject+MLCryptionBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 5897316E1FFC12BA003318AF /* NSObject+MLCryptionBase64.m */; };
-		589731721FFC12DE003318AF /* NSObject+MLCryptionMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 589731711FFC12DE003318AF /* NSObject+MLCryptionMD5.m */; };
-		589731751FFC12EE003318AF /* NSObject+MLCryptionAES.m in Sources */ = {isa = PBXBuildFile; fileRef = 589731741FFC12EE003318AF /* NSObject+MLCryptionAES.m */; };
-		589731781FFC12FD003318AF /* NSObject+MLCryptionRSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 589731771FFC12FD003318AF /* NSObject+MLCryptionRSA.m */; };
+		58B8806B2002481700DE0CA2 /* MLCryption_DES.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B8806A2002481700DE0CA2 /* MLCryption_DES.m */; };
+		58B8806E20024C8E00DE0CA2 /* MLCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B8806D20024C8E00DE0CA2 /* MLCryptor.m */; };
+		58B880742003C18000DE0CA2 /* MLCryption_3DES.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B880732003C18000DE0CA2 /* MLCryption_3DES.m */; };
+		58B880772003C71800DE0CA2 /* MLCryption_AES128.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B880762003C71800DE0CA2 /* MLCryption_AES128.m */; };
+		58B8807A2003CD8F00DE0CA2 /* MLCryption_CAST.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B880792003CD8F00DE0CA2 /* MLCryption_CAST.m */; };
+		58B8807D2003CDAC00DE0CA2 /* MLCryption_RC4.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B8807C2003CDAC00DE0CA2 /* MLCryption_RC4.m */; };
+		58B880802003CDC900DE0CA2 /* MLCryption_RC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B8807F2003CDC900DE0CA2 /* MLCryption_RC2.m */; };
+		58B880832003CDDD00DE0CA2 /* MLCryption_Blowfish.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B880822003CDDD00DE0CA2 /* MLCryption_Blowfish.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,10 @@
 /* Begin PBXFileReference section */
 		0E27B7D11FFF4D28001246F9 /* MLCryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLCryption.h; path = ../../MLCryption/MLCryption.h; sourceTree = "<group>"; };
 		0E27B7D21FFF4D28001246F9 /* MLCryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLCryption.m; path = ../../MLCryption/MLCryption.m; sourceTree = "<group>"; };
+		584B5CCA2002446D0057D8B0 /* MLCryptionCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryptionCommon.h; sourceTree = "<group>"; };
+		584B5CCB2002446D0057D8B0 /* MLCryptionCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryptionCommon.m; sourceTree = "<group>"; };
+		584B5CCD2002456C0057D8B0 /* MLCryption_AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption_AES.h; sourceTree = "<group>"; };
+		584B5CCE2002456C0057D8B0 /* MLCryption_AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption_AES.m; sourceTree = "<group>"; };
 		589731281FFBD538003318AF /* MLCryptionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLCryptionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5897312C1FFBD538003318AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5897312E1FFBD538003318AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,18 +69,24 @@
 		5897314C1FFBD539003318AF /* MLCryptionDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MLCryptionDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		589731501FFBD539003318AF /* MLCryptionDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLCryptionDemoUITests.m; sourceTree = "<group>"; };
 		589731521FFBD539003318AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		589731671FFC0F85003318AF /* NSObject+MLCryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MLCryption.h"; sourceTree = "<group>"; };
-		589731681FFC0F85003318AF /* NSObject+MLCryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MLCryption.m"; sourceTree = "<group>"; };
-		5897316A1FFC11E5003318AF /* NSObject+MLCryptionDES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MLCryptionDES.h"; sourceTree = "<group>"; };
-		5897316B1FFC11E5003318AF /* NSObject+MLCryptionDES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MLCryptionDES.m"; sourceTree = "<group>"; };
 		5897316D1FFC12BA003318AF /* NSObject+MLCryptionBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MLCryptionBase64.h"; sourceTree = "<group>"; };
 		5897316E1FFC12BA003318AF /* NSObject+MLCryptionBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MLCryptionBase64.m"; sourceTree = "<group>"; };
-		589731701FFC12DE003318AF /* NSObject+MLCryptionMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MLCryptionMD5.h"; sourceTree = "<group>"; };
-		589731711FFC12DE003318AF /* NSObject+MLCryptionMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MLCryptionMD5.m"; sourceTree = "<group>"; };
-		589731731FFC12EE003318AF /* NSObject+MLCryptionAES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MLCryptionAES.h"; sourceTree = "<group>"; };
-		589731741FFC12EE003318AF /* NSObject+MLCryptionAES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MLCryptionAES.m"; sourceTree = "<group>"; };
-		589731761FFC12FD003318AF /* NSObject+MLCryptionRSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MLCryptionRSA.h"; sourceTree = "<group>"; };
-		589731771FFC12FD003318AF /* NSObject+MLCryptionRSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MLCryptionRSA.m"; sourceTree = "<group>"; };
+		58B880692002481700DE0CA2 /* MLCryption_DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MLCryption_DES.h; path = ../../MLCryption/MLCryption_DES.h; sourceTree = "<group>"; };
+		58B8806A2002481700DE0CA2 /* MLCryption_DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MLCryption_DES.m; path = ../../MLCryption/MLCryption_DES.m; sourceTree = "<group>"; };
+		58B8806C20024C8E00DE0CA2 /* MLCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryptor.h; sourceTree = "<group>"; };
+		58B8806D20024C8E00DE0CA2 /* MLCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryptor.m; sourceTree = "<group>"; };
+		58B880722003C14B00DE0CA2 /* MLCryption_3DES.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLCryption_3DES.h; sourceTree = "<group>"; };
+		58B880732003C18000DE0CA2 /* MLCryption_3DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption_3DES.m; sourceTree = "<group>"; };
+		58B880752003C71800DE0CA2 /* MLCryption_AES128.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption_AES128.h; sourceTree = "<group>"; };
+		58B880762003C71800DE0CA2 /* MLCryption_AES128.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption_AES128.m; sourceTree = "<group>"; };
+		58B880782003CD8F00DE0CA2 /* MLCryption_CAST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption_CAST.h; sourceTree = "<group>"; };
+		58B880792003CD8F00DE0CA2 /* MLCryption_CAST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption_CAST.m; sourceTree = "<group>"; };
+		58B8807B2003CDAC00DE0CA2 /* MLCryption_RC4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption_RC4.h; sourceTree = "<group>"; };
+		58B8807C2003CDAC00DE0CA2 /* MLCryption_RC4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption_RC4.m; sourceTree = "<group>"; };
+		58B8807E2003CDC900DE0CA2 /* MLCryption_RC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption_RC2.h; sourceTree = "<group>"; };
+		58B8807F2003CDC900DE0CA2 /* MLCryption_RC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption_RC2.m; sourceTree = "<group>"; };
+		58B880812003CDDD00DE0CA2 /* MLCryption_Blowfish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption_Blowfish.h; sourceTree = "<group>"; };
+		58B880822003CDDD00DE0CA2 /* MLCryption_Blowfish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption_Blowfish.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,18 +146,28 @@
 				5897312B1FFBD538003318AF /* Supporting Files */,
 				0E27B7D11FFF4D28001246F9 /* MLCryption.h */,
 				0E27B7D21FFF4D28001246F9 /* MLCryption.m */,
-				589731671FFC0F85003318AF /* NSObject+MLCryption.h */,
-				589731681FFC0F85003318AF /* NSObject+MLCryption.m */,
+				58B8806C20024C8E00DE0CA2 /* MLCryptor.h */,
+				58B8806D20024C8E00DE0CA2 /* MLCryptor.m */,
+				584B5CCA2002446D0057D8B0 /* MLCryptionCommon.h */,
+				584B5CCB2002446D0057D8B0 /* MLCryptionCommon.m */,
+				58B880692002481700DE0CA2 /* MLCryption_DES.h */,
+				58B8806A2002481700DE0CA2 /* MLCryption_DES.m */,
+				58B880722003C14B00DE0CA2 /* MLCryption_3DES.h */,
+				58B880732003C18000DE0CA2 /* MLCryption_3DES.m */,
+				58B880752003C71800DE0CA2 /* MLCryption_AES128.h */,
+				58B880762003C71800DE0CA2 /* MLCryption_AES128.m */,
+				58B880782003CD8F00DE0CA2 /* MLCryption_CAST.h */,
+				58B880792003CD8F00DE0CA2 /* MLCryption_CAST.m */,
+				58B8807B2003CDAC00DE0CA2 /* MLCryption_RC4.h */,
+				58B8807C2003CDAC00DE0CA2 /* MLCryption_RC4.m */,
+				58B8807E2003CDC900DE0CA2 /* MLCryption_RC2.h */,
+				58B8807F2003CDC900DE0CA2 /* MLCryption_RC2.m */,
+				58B880812003CDDD00DE0CA2 /* MLCryption_Blowfish.h */,
+				58B880822003CDDD00DE0CA2 /* MLCryption_Blowfish.m */,
+				584B5CCD2002456C0057D8B0 /* MLCryption_AES.h */,
+				584B5CCE2002456C0057D8B0 /* MLCryption_AES.m */,
 				5897316D1FFC12BA003318AF /* NSObject+MLCryptionBase64.h */,
 				5897316E1FFC12BA003318AF /* NSObject+MLCryptionBase64.m */,
-				5897316A1FFC11E5003318AF /* NSObject+MLCryptionDES.h */,
-				5897316B1FFC11E5003318AF /* NSObject+MLCryptionDES.m */,
-				589731701FFC12DE003318AF /* NSObject+MLCryptionMD5.h */,
-				589731711FFC12DE003318AF /* NSObject+MLCryptionMD5.m */,
-				589731731FFC12EE003318AF /* NSObject+MLCryptionAES.h */,
-				589731741FFC12EE003318AF /* NSObject+MLCryptionAES.m */,
-				589731761FFC12FD003318AF /* NSObject+MLCryptionRSA.h */,
-				589731771FFC12FD003318AF /* NSObject+MLCryptionRSA.m */,
 			);
 			path = MLCryptionDemo;
 			sourceTree = "<group>";
@@ -305,16 +330,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				589731751FFC12EE003318AF /* NSObject+MLCryptionAES.m in Sources */,
-				589731691FFC0F85003318AF /* NSObject+MLCryption.m in Sources */,
+				58B880802003CDC900DE0CA2 /* MLCryption_RC2.m in Sources */,
 				0E27B7D31FFF4D28001246F9 /* MLCryption.m in Sources */,
-				5897316C1FFC11E5003318AF /* NSObject+MLCryptionDES.m in Sources */,
-				589731781FFC12FD003318AF /* NSObject+MLCryptionRSA.m in Sources */,
+				58B8807D2003CDAC00DE0CA2 /* MLCryption_RC4.m in Sources */,
+				58B880832003CDDD00DE0CA2 /* MLCryption_Blowfish.m in Sources */,
 				589731331FFBD538003318AF /* ViewController.m in Sources */,
+				584B5CCF2002456C0057D8B0 /* MLCryption_AES.m in Sources */,
+				58B880772003C71800DE0CA2 /* MLCryption_AES128.m in Sources */,
+				58B880742003C18000DE0CA2 /* MLCryption_3DES.m in Sources */,
+				584B5CCC2002446D0057D8B0 /* MLCryptionCommon.m in Sources */,
+				58B8806E20024C8E00DE0CA2 /* MLCryptor.m in Sources */,
+				58B8807A2003CD8F00DE0CA2 /* MLCryption_CAST.m in Sources */,
 				5897316F1FFC12BA003318AF /* NSObject+MLCryptionBase64.m in Sources */,
 				589731301FFBD538003318AF /* AppDelegate.m in Sources */,
 				5897312D1FFBD538003318AF /* main.m in Sources */,
-				589731721FFC12DE003318AF /* NSObject+MLCryptionMD5.m in Sources */,
+				58B8806B2002481700DE0CA2 /* MLCryption_DES.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

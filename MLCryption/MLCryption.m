@@ -7,180 +7,130 @@
 //
 
 #import "MLCryption.h"
-#import <CommonCrypto/CommonCryptor.h>
+//#import <CommonCrypto/CommonCryptor.h>
 
 @interface MLCryption()
 
-/** test */
-@property (nonatomic, assign) NSUInteger test ;
 
 @end
 
 @implementation MLCryption
-
-+ (instancetype)cryptionDES_MLMode:(MLMode)MLMode MLPadding:(MLPadding)MLPadding iv:(const void *)iv
-{
-    return [[MLCryption alloc] initWithMLMode:MLMode MLPadding:MLPadding iv:iv];
-}
-
-- (instancetype)initWithMLMode:(MLMode)MLMode MLPadding:(MLPadding)MLPadding iv:(const void *)iv
-{
-    MLCryption *cry = [[MLCryption alloc] init];
-    cry.MLMode = MLMode;
-    cry.MLPadding = MLPadding;
-    cry.iv = iv;
-    
-
-    return cry;
-}
-
-
-+ (NSString *)ml_encryptUseDes:(NSString *)plainText key:(NSString *)key cryption:(MLCryption *)cryption
-{   
-    NSString *ciphertext = nil;
-    NSData *textData = [plainText dataUsingEncoding:NSUTF8StringEncoding];
-    NSUInteger dataLength = [textData length];
-    unsigned char buffer[1024];
-    memset(buffer, 0, sizeof(char));
-    size_t numBytesEncrypted = 0;
-    CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt, kCCAlgorithmDES,kCCOptionPKCS7Padding,[key UTF8String], kCCKeySizeDES,cryption.iv,[textData bytes], dataLength,buffer, 1024,&numBytesEncrypted);
-    if (cryptStatus == kCCSuccess) {
-        NSData *data = [NSData dataWithBytes:buffer length:(NSUInteger)numBytesEncrypted];
-        ciphertext = [self encode:data];
-    }
-    return ciphertext;
-}
-
-//+ (NSString *)ml_encryptUseDes:(NSString *)plainText key:(NSString *)key iv:(const void *)iv
-//{    NSString *ciphertext = nil;
-//    NSData *textData = [plainText dataUsingEncoding:NSUTF8StringEncoding];
-//    NSUInteger dataLength = [textData length];
-//    unsigned char buffer[1024];
-//    memset(buffer, 0, sizeof(char));
-//    size_t numBytesEncrypted = 0;
-//    CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt, kCCAlgorithmDES,kCCOptionPKCS7Padding,[key UTF8String], kCCKeySizeDES,iv,[textData bytes], dataLength,buffer, 1024,&numBytesEncrypted);
-//    if (cryptStatus == kCCSuccess) {
-//        NSData *data = [NSData dataWithBytes:buffer length:(NSUInteger)numBytesEncrypted];
-//        ciphertext = [self encode:data];
+//
+//# pragma mark - 创建DES加密器
+//CCCryptorRef cryptor = NULL;
+//+ (instancetype)cryptionDES_Mode:(MLMode)MLMode MLPadding:(MLPadding)MLPadding key:(NSString *)key iv:(const void *) iv ivMode:(ivMode)ivMode
+//{
+//    return [[MLCryption alloc] initWithDES_Mode:MLMode MLPadding:MLPadding key:key iv:iv  ivMode:ivMode];
+//}
+//
+//- (instancetype)initWithDES_Mode:(MLMode)MLMode MLPadding:(MLPadding)MLPadding key:(NSString *)key iv:(const void *)iv ivMode:(ivMode)ivMode
+//{
+//    if (self = [super init]) {
+//        self.MLMode = MLMode;
+//        self.MLPadding = MLPadding;
+//        self.key = key;
+//        if (ivMode == ivString) {
+//            self.iv = (const void *)[(__bridge NSString *)iv UTF8String];
+//        }else{
+//            self.iv = iv;
+//        }
 //    }
+//    return self;
+//}
+//
+//# pragma mark - DES加密和解密
+///** 输入一个Data数据，返回一个加密后的Data数据 */
+//- (NSData *)ml_encryptUseDes_DataToData:(NSData *)plainData;
+//{
+//    
+//    //1.创建加密器CCCryptorRef
+//    CCCryptorStatus cryptorStatus = CCCryptorCreateWithMode(kCCEncrypt, self.MLMode, kCCAlgorithmDES, kCCOptionPKCS7Padding, self.iv, [self.key UTF8String], kCCKeySizeDES, NULL, 0, 0, 0, &cryptor);
+//    if (cryptorStatus!=kCCSuccess) return nil;
+//    
+//    size_t bufsize = 0;
+//    size_t moved = 0;
+//    size_t total = 0;
+//    
+//    //2.获取输出数据的最大长度
+////    NSData *textData = [plainText dataUsingEncoding:NSUTF8StringEncoding];
+//    NSData *textData = plainData;
+//    bufsize = CCCryptorGetOutputLength(cryptor, textData.length, true);
+//    char * buf = (char*)malloc(bufsize);
+//    bzero(buf, bufsize);
+//    
+//    //3.加密处理
+//    cryptorStatus = CCCryptorUpdate(cryptor, textData.bytes, textData.length, buf, bufsize, &moved);
+//    total += moved;
+//    if (cryptorStatus!=kCCSuccess) return nil;
+//    
+//    //4.处理最后的数据块
+//    cryptorStatus = CCCryptorFinal(cryptor, buf + total, bufsize - total, &moved);
+//    if (cryptorStatus!=kCCSuccess) return nil;
+//    total += moved;
+//    
+//    //5.释放
+//    CCCryptorRelease(cryptor);
+//    NSData * retData = [NSData dataWithBytes:buf length:total];
+//    free(buf);
+////    NSString *ciphertext = [retData base64EncodedStringWithOptions:0];
+//    
+//    return retData;
+//}
+//
+///** 输入一个加密Data数据，返回一个解密后的Data数据 */
+//- (NSData *)ml_decryptUseDes_DataToData:(NSData *)cipherData
+//{
+//    //1.创建加密器CCCryptorRef
+//    CCCryptorStatus cryptorStatus = CCCryptorCreateWithMode(kCCDecrypt, self.MLMode, kCCAlgorithmDES, kCCOptionPKCS7Padding, self.iv, [self.key UTF8String], kCCKeySizeDES, NULL, 0, 0, 0, &cryptor);
+//    if (cryptorStatus!=kCCSuccess) return nil;
+//    
+//    size_t bufsize = 0;
+//    size_t moved = 0;
+//    size_t total = 0;
+//    
+//    //2.获取输出数据的最大长度
+////    NSData *textData = [[NSData alloc]initWithBase64EncodedString:cipherText options:0];
+//    NSData *textData = cipherData;
+//    bufsize = CCCryptorGetOutputLength(cryptor, textData.length, true);
+//    char * buf = (char*)malloc(bufsize);
+//    bzero(buf, bufsize);
+//    
+//    //3.加密处理
+//    cryptorStatus = CCCryptorUpdate(cryptor, textData.bytes, textData.length, buf, bufsize, &moved);
+//    total += moved;
+//    if (cryptorStatus!=kCCSuccess) return nil;
+//    
+//    //4.处理最后的数据块
+//    cryptorStatus = CCCryptorFinal(cryptor, buf + total, bufsize - total, &moved);
+//    if (cryptorStatus!=kCCSuccess) return nil;
+//    total += moved;
+//    
+//    //5.释放
+//    CCCryptorRelease(cryptor);
+//    NSData * retData = [NSData dataWithBytes:buf length:total];
+//    free(buf);
+////    NSString *plainText =[[NSString alloc]initWithData:retData encoding:NSUTF8StringEncoding];
+//    return retData;
+//}
+//
+///** 输入一个NSString数据，返回一个加密后的NSString数据 */
+//- (NSString *)ml_encryptUseDes_StrToStr:(NSString *)plainText
+//{
+//    NSData *textData = [plainText dataUsingEncoding:NSUTF8StringEncoding];
+//   NSData *retData = [self ml_encryptUseDes_DataToData:textData];
+//    NSString *ciphertext = [retData base64EncodedStringWithOptions:0];
+//
 //    return ciphertext;
 //}
-
-
-static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-
-+ (NSString *)encode:(NSData *)data
-{
-    if (data.length == 0)
-        return nil;
-    
-    char *characters = malloc(data.length * 3 / 2);
-    
-    if (characters == NULL)
-        return nil;
-    
-    int end = (int)(data.length - 3);
-    int index = 0;
-    int charCount = 0;
-    int n = 0;
-    
-    while (index <= end) {
-        int d = (((int)(((char *)[data bytes])[index]) & 0x0ff) << 16)
-        | (((int)(((char *)[data bytes])[index + 1]) & 0x0ff) << 8)
-        | ((int)(((char *)[data bytes])[index + 2]) & 0x0ff);
-        
-        characters[charCount++] = encodingTable[(d >> 18) & 63];
-        characters[charCount++] = encodingTable[(d >> 12) & 63];
-        characters[charCount++] = encodingTable[(d >> 6) & 63];
-        characters[charCount++] = encodingTable[d & 63];
-        
-        index += 3;
-        
-        if(n++ >= 14)
-        {
-            n = 0;
-            characters[charCount++] = ' ';
-        }
-    }
-    
-    if(index == data.length - 2)
-    {
-        int d = (((int)(((char *)[data bytes])[index]) & 0x0ff) << 16)
-        | (((int)(((char *)[data bytes])[index + 1]) & 255) << 8);
-        characters[charCount++] = encodingTable[(d >> 18) & 63];
-        characters[charCount++] = encodingTable[(d >> 12) & 63];
-        characters[charCount++] = encodingTable[(d >> 6) & 63];
-        characters[charCount++] = '=';
-    }
-    else if(index == data.length - 1)
-    {
-        int d = ((int)(((char *)[data bytes])[index]) & 0x0ff) << 16;
-        characters[charCount++] = encodingTable[(d >> 18) & 63];
-        characters[charCount++] = encodingTable[(d >> 12) & 63];
-        characters[charCount++] = '=';
-        characters[charCount++] = '=';
-    }
-    NSString * rtnStr = [[NSString alloc] initWithBytesNoCopy:characters length:charCount encoding:NSUTF8StringEncoding freeWhenDone:YES];
-    return rtnStr;
-    
-}
-
-+ (NSData *)decode:(NSString *)data
-{
-    if(data == nil || data.length <= 0) {
-        return nil;
-    }
-    NSMutableData *rtnData = [[NSMutableData alloc]init];
-    int slen = (int)data.length;
-    int index = 0;
-    while (true) {
-        while (index < slen && [data characterAtIndex:index] <= ' ') {
-            index++;
-        }
-        if (index >= slen || index  + 3 >= slen) {
-            break;
-        }
-        
-        int byte = ([self char2Int:[data characterAtIndex:index]] << 18) + ([self char2Int:[data characterAtIndex:index + 1]] << 12) + ([self char2Int:[data characterAtIndex:index + 2]] << 6) + [self char2Int:[data characterAtIndex:index + 3]];
-        Byte temp1 = (byte >> 16) & 255;
-        [rtnData appendBytes:&temp1 length:1];
-        if([data characterAtIndex:index + 2] == '=') {
-            break;
-        }
-        Byte temp2 = (byte >> 8) & 255;
-        [rtnData appendBytes:&temp2 length:1];
-        if([data characterAtIndex:index + 3] == '=') {
-            break;
-        }
-        Byte temp3 = byte & 255;
-        [rtnData appendBytes:&temp3 length:1];
-        index += 4;
-        
-    }
-    return rtnData;
-}
-
-+ (int)char2Int:(char)c
-{
-    if (c >= 'A' && c <= 'Z') {
-        return c - 65;
-    } else if (c >= 'a' && c <= 'z') {
-        return c - 97 + 26;
-    } else if (c >= '0' && c <= '9') {
-        return c - 48 + 26 + 26;
-    } else {
-        switch(c) {
-            case '+':
-                return 62;
-            case '/':
-                return 63;
-            case '=':
-                return 0;
-            default:
-                return -1;
-        }
-    }
-}
+//
+///** 输入一个加密的NSString数据，返回一个解密后的NSString数据 */
+//- (NSString *)ml_decryptUseDes_StrToStr:(NSString *)cipherText
+//{
+//    NSData *textData = [[NSData alloc]initWithBase64EncodedString:cipherText options:0];
+//    NSData *retData = [self ml_decryptUseDes_DataToData:textData];
+//    NSString *plainText =[[NSString alloc]initWithData:retData encoding:NSUTF8StringEncoding];
+//    return plainText;
+//}
 
 @end
 
