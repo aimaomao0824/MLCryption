@@ -37,13 +37,13 @@ CCCryptorRef cryptorDES = NULL;
 /**DES 输入一个Data数据，返回一个加密后的Data数据 */
 - (NSData *)ml_encryptUseDes_DataToData:(NSData *)plainData;
 {
-  return [self cryptorCommonMethodWihtData:plainData MLOperation:kMLEncrypt Algorithm:kMLAlgorithmDES iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeDES kCCBlockSize:kCCBlockSizeDES];
+  return [self cryptorCommonMethodWihtData:plainData MLOperation:kCCEncrypt Algorithm:kCCAlgorithmDES iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeDES kCCBlockSize:kCCBlockSizeDES];
 }
 
 /**DES 输入一个加密Data数据，返回一个解密后的Data数据 */
 - (NSData *)ml_decryptUseDes_DataToData:(NSData *)cipherData
 {
-    return [self cryptorCommonMethodWihtData:cipherData MLOperation:kMLDecrypt Algorithm:kMLAlgorithmDES iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeDES kCCBlockSize:kCCBlockSizeDES];
+    return [self cryptorCommonMethodWihtData:cipherData MLOperation:kCCDecrypt Algorithm:kCCAlgorithmDES iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeDES kCCBlockSize:kCCBlockSizeDES];
 }
 
 

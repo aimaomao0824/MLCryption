@@ -23,7 +23,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@"一------------------下使用d单个加密-----------------------，加密");
+    [self testDES];
+    [self test3DES];
+    [self testAES128];
+    [self testCAST];
+    [self testRC2];
     [self testBlowfish];
+    NSLog(@"一------------------下使用加密器-----------------------，加密");
+    [self cryptor_des];
+    [self cryptor_3des];
+    [self cryptor_aes128];
+    [self cryptor_cast];
+    [self cryptor_rc2];
+    [self cryptor_blowfish];
 
     
 }
@@ -118,6 +132,79 @@
     NSString *crypStr = [cryption ml_encryptUseBlowfish_StrToStr:str];
     NSString *deCrypStr = [cryption ml_decryptUseBlowfish_StrToStr:crypStr];
     NSLog(@"Blowfish-->>原文：%@，key：%@，iv：%s，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+}
+
+# pragma mark - 1.cryptor加密器的使用CBC-pk7
+- (void)cryptor_des
+{
+    NSString *str = @"满泰科技";
+    NSString *key = @"123456709";
+    const void *iv = @"12345670";
+    //    const Byte iv[] = {1,2,3,4,5,6,7,8};
+    
+    MLCryptor *cryptorCBC_PK7 = [MLCryptor cryptorCommonMethodCBC_PK7WithAlgorithm:kCCAlgorithmDES key:key keySize:kMLKeySizeDES iv:iv ivMode:ivString ivSize:kMLBlockSizeDES];
+    NSString *crypStr = [cryptorCBC_PK7 ml_encryptCommonMethod_StrToStr:str];
+    NSString *deCrypStr = [cryptorCBC_PK7 ml_decryptCommonMethod_StrToStr:crypStr];
+    NSLog(@"cryptor_des-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+}
+
+- (void)cryptor_3des
+{
+    NSString *str = @"满泰科技";
+    NSString *key = @"123456789012345678909999";
+    const void *iv = @"12345670999";
+    
+    MLCryptor *cryptorCBC_PK7 = [MLCryptor cryptorCommonMethodCBC_PK7WithAlgorithm:kCCAlgorithm3DES key:key keySize:kMLKeySize3DES iv:iv ivMode:ivString ivSize:kMLBlockSize3DES];
+    NSString *crypStr = [cryptorCBC_PK7 ml_encryptCommonMethod_StrToStr:str];
+    NSString *deCrypStr = [cryptorCBC_PK7 ml_decryptCommonMethod_StrToStr:crypStr];
+    NSLog(@"cryptor_3des-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+}
+
+- (void)cryptor_aes128
+{
+    NSString *str = @"满泰科技";
+    NSString *key = @"123456789012345699";
+    const void *iv = @"1234567890123456";
+    
+    MLCryptor *cryptorCBC_PK7 = [MLCryptor cryptorCommonMethodCBC_PK7WithAlgorithm:kCCAlgorithmAES128 key:key keySize:kMLKeySizeAES128 iv:iv ivMode:ivString ivSize:kMLBlockSizeAES128];
+    NSString *crypStr = [cryptorCBC_PK7 ml_encryptCommonMethod_StrToStr:str];
+    NSString *deCrypStr = [cryptorCBC_PK7 ml_decryptCommonMethod_StrToStr:crypStr];
+    NSLog(@"cryptor_aes128-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+}
+- (void)cryptor_cast
+{
+    NSString *str = @"满泰科技";
+    NSString *key = @"123456789012345699";
+    const void *iv = @"1234567890123456";
+    
+    MLCryptor *cryptorCBC_PK7 = [MLCryptor cryptorCommonMethodCBC_PK7WithAlgorithm:kCCAlgorithmCAST key:key keySize:kMLKeySizeMaxCAST iv:iv ivMode:ivString ivSize:kMLBlockSizeCAST];
+    NSString *crypStr = [cryptorCBC_PK7 ml_encryptCommonMethod_StrToStr:str];
+    NSString *deCrypStr = [cryptorCBC_PK7 ml_decryptCommonMethod_StrToStr:crypStr];
+    NSLog(@"cryptor_cast-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+}
+- (void)cryptor_rc2
+{
+    NSString *str = @"满泰科技";
+    //128为key
+    NSString *key = @"12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345670";
+    const void *iv = @"12345678";
+    
+    MLCryptor *cryptorCBC_PK7 = [MLCryptor cryptorCommonMethodCBC_PK7WithAlgorithm:kCCAlgorithmRC2 key:key keySize:kMLKeySizeMaxRC2 iv:iv ivMode:ivString ivSize:kMLBlockSizeRC2];
+    NSString *crypStr = [cryptorCBC_PK7 ml_encryptCommonMethod_StrToStr:str];
+    NSString *deCrypStr = [cryptorCBC_PK7 ml_decryptCommonMethod_StrToStr:crypStr];
+    NSLog(@"cryptor_rc2-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+}
+- (void)cryptor_blowfish
+{
+    NSString *str = @"满泰科技";
+    //56位key
+    NSString *key = @"12345678901234567890123456789012345678901234567890123456";
+    const void *iv = @"12345678";
+    
+    MLCryptor *cryptorCBC_PK7 = [MLCryptor cryptorCommonMethodCBC_PK7WithAlgorithm:kCCAlgorithmBlowfish key:key keySize:kMLKeySizeMaxBlowfish iv:iv ivMode:ivString ivSize:kMLBlockSizeBlowfish];
+    NSString *crypStr = [cryptorCBC_PK7 ml_encryptCommonMethod_StrToStr:str];
+    NSString *deCrypStr = [cryptorCBC_PK7 ml_decryptCommonMethod_StrToStr:crypStr];
+    NSLog(@"cryptor_blowfish-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
 }
 
 

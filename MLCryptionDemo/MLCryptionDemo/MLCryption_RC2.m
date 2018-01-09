@@ -37,13 +37,13 @@ CCCryptorRef cryptorRC2 = NULL;
 /**RC2 输入一个Data数据，返回一个加密后的Data数据 */
 - (NSData *)ml_encryptUseRC2_DataToData:(NSData *)plainData;
 {
-    return [self cryptorCommonMethodWihtData:plainData MLOperation:kMLEncrypt Algorithm:kMLAlgorithmRC2 iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeMaxRC2 kCCBlockSize:kCCBlockSizeRC2];
+    return [self cryptorCommonMethodWihtData:plainData MLOperation:kCCEncrypt Algorithm:kCCAlgorithmRC2 iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeMaxRC2 kCCBlockSize:kCCBlockSizeRC2];
 }
 
 /**RC2 输入一个加密Data数据，返回一个解密后的Data数据 */
 - (NSData *)ml_decryptUseRC2_DataToData:(NSData *)cipherData
 {
-    return [self cryptorCommonMethodWihtData:cipherData MLOperation:kMLDecrypt Algorithm:kMLAlgorithmRC2 iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeMaxRC2 kCCBlockSize:kCCBlockSizeRC2];
+    return [self cryptorCommonMethodWihtData:cipherData MLOperation:kCCDecrypt Algorithm:kCCAlgorithmRC2 iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeMaxRC2 kCCBlockSize:kCCBlockSizeRC2];
 }
 
 

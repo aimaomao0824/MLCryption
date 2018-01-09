@@ -10,60 +10,52 @@
 
 @interface MLCryptor : MLCryptionCommon
 
+#pragma mark - 「CBC模式/pkcs7padding填充/Base64输出/utf8编码」加密器初始化方法
+/**
+ *  这个模式下初始化的加密器参数默认为->CBC模式/pkcs7padding填充/Base64输出/utf8编码,
+ *
+ *  @param alg     加密方式
+ *  @param key     加密密钥
+ *  @param keySize 密钥长度设置
+ *  @param iv      向量设置
+ *  @param ivMode  向量传入模式「NSStirng 或者 Byte」
+ *  @param ivSize  向量长度设置
+ *
+ *  @return 返回一个初始化后的加密器cryptor
+ */
++ (instancetype)cryptorCommonMethodCBC_PK7WithAlgorithm:(CCAlgorithm)alg key:(NSString *)key keySize:(MLKeySize)keySize iv:(const void *) iv ivMode:(ivMode)ivMode  ivSize:(MLIvSize)ivSize;
+/**
+ *  这个模式下初始化的加密器参数默认为->CBC模式/pkcs7padding填充/Base64输出/utf8编码,
+ *
+ *  @param alg     加密方式
+ *  @param key     加密密钥
+ *  @param keySize 密钥长度设置
+ *  @param iv      向量设置
+ *  @param ivMode  向量传入模式「NSStirng 或者 Byte」
+ *  @param ivSize  向量长度设置
+ *
+ *  @return 返回一个初始化后的加密器cryptor
+ */
+- (instancetype)initCommonMethodCBC_PK7WithAlgorithm:(CCAlgorithm)alg key:(NSString *)key keySize:(MLKeySize)keySize iv:(const void *)iv ivMode:(ivMode)ivMode  ivSize:(MLIvSize)ivSize;
 
 
-# pragma mark - 创建加密器
+#pragma mark - 多参数多模式下加密器初始化方法
++ (instancetype)cryptorCommonMethodWithAlgorithm:(CCAlgorithm)alg key:(NSString *)key keySize:(MLKeySize)keySize iv:(const void *) iv ivMode:(ivMode)ivMode  ivSize:(MLIvSize)ivSize;
 
-# pragma mark - DES加密解密方法
-// 创建DES加密器
-+ (instancetype)cryption_DES_Mode:(MLMode)MLMode MLPadding:(MLPadding)MLPadding key:(NSString *)key iv:(const void *)iv ivMode:(ivMode)ivMode;
-- (instancetype)initWith_DES_Mode:(MLMode)MLMode MLPadding:(MLPadding)MLPadding key:(NSString *)key iv:(const void *)iv ivMode:(ivMode)ivMode;
-
-/** 输入一个NSString数据，返回一个加密/解密后的NSString数据 */
-- (NSString *)ml_encryptUseDes_StrToStr:(NSString *)plainText;
-- (NSString *)ml_decryptUseDes_StrToStr:(NSString *)cipherText;
-/** 输入一个Data数据，返回一个加密/解密后的Data数据 */
-- (NSData *)ml_encryptUseDes_DataToData:(NSData *)plainData;
-- (NSData *)ml_decryptUseDes_DataToData:(NSData *)cipherData;
+- (instancetype)initCommonMethodWithAlgorithm:(CCAlgorithm)alg key:(NSString *)key keySize:(MLKeySize)keySize iv:(const void *)iv ivMode:(ivMode)ivMode  ivSize:(MLIvSize)ivSize;
 
 
-# pragma mark - 3DES加密解密方法
-// 创建3DES加密器
-+ (instancetype)cryption_3DES_Mode:(MLMode)MLMode MLPadding:(MLPadding)MLPadding key:(NSString *)key iv:(const void *)iv ivMode:(ivMode)ivMode;
-- (instancetype)initWith_3DES_Mode:(MLMode)MLMode MLPadding:(MLPadding)MLPadding key:(NSString *)key iv:(const void *)iv ivMode:(ivMode)ivMode;
+#pragma mark - 加密和解密方法的调用
+/** 输入一个Data数据，返回一个加密后的Data数据 */
+- (NSData *)ml_encryptCommonMethod_DataToData:(NSData *)plainData;
 
-/** 输入一个NSString数据，返回一个加密/解密后的NSString数据 */
-- (NSString *)ml_encryptUse3Des_StrToStr:(NSString *)plainText;
-- (NSString *)ml_decryptUse3Des_StrToStr:(NSString *)cipherText;
-/** 输入一个Data数据，返回一个加密/解密后的Data数据 */
-- (NSData *)ml_encryptUse3Des_DataToData:(NSData *)plainData;
-- (NSData *)ml_decryptUse3Des_DataToData:(NSData *)cipherData;
+/** 输入一个加密Data数据，返回一个解密后的Data数据 */
+- (NSData *)ml_decryptCommonMethod_DataToData:(NSData *)cipherData;
 
-# pragma mark - AES加密解密方法
-// 创建AES加密器
-+ (instancetype)cryption_AES_Mode:(MLMode)MLMode MLPadding:(MLPadding)MLPadding KeySize:(MLKeySize)keySize key:(NSString *)key iv:(const void *)iv ivMode:(ivMode)ivMode;
-- (instancetype)initWith_AES_Mode:(MLMode)MLMode MLPadding:(MLPadding)MLPadding KeySize:(MLKeySize)keySize key:(NSString *)key iv:(const void *)iv ivMode:(ivMode)ivMode;
+/** 输入一个NSString数据，返回一个加密后的NSString数据 */
+- (NSString *)ml_encryptCommonMethod_StrToStr:(NSString *)plainText;
 
-/**AES 输入一个NSString数据，返回一个加密/解密后的NSString数据 */
-- (NSString *)ml_encryptUseAES_StrToStr:(NSString *)plainText;
-- (NSString *)ml_decryptUseAES_StrToStr:(NSString *)cipherText;
-/**AES 输入一个Data数据，返回一个加密/解密后的Data数据 */
-- (NSData *)ml_encryptUseAES_DataToData:(NSData *)plainData;
-- (NSData *)ml_decryptUseAES_DataToData:(NSData *)cipherData;
-
-# pragma mark - CAST加密解密方法
-// 创建CAST加密器
-+ (instancetype)cryption_CAST_Mode:(MLMode)MLMode MLPadding:(MLPadding)MLPadding KeySize:(MLKeySize)keySize key:(NSString *)key iv:(const void *)iv ivMode:(ivMode)ivMode;
-- (instancetype)initWith_CAST_Mode:(MLMode)MLMode MLPadding:(MLPadding)MLPadding KeySize:(MLKeySize)keySize key:(NSString *)key iv:(const void *)iv ivMode:(ivMode)ivMode;
-
-/**AES 输入一个NSString数据，返回一个加密后的NSString数据 */
-- (NSString *)ml_encryptUseCAST_StrToStr:(NSString *)plainText;
-/**AES 输入一个NSString数据，返回一个解密后的NSString数据 */
-- (NSString *)ml_decryptUseCAST_StrToStr:(NSString *)cipherText;
-
-/**AES 输入一个Data数据，返回一个加密后的Data数据 */
-- (NSData *)ml_encryptUseCAST_DataToData:(NSData *)plainData;
-/**AES 输入一个Data数据，返回一个解密后的Data数据 */
-- (NSData *)ml_decryptUseCAST_DataToData:(NSData *)cipherData;
+/** 输入一个加密的NSString数据，返回一个解密后的NSString数据 */
+- (NSString *)ml_decryptCommonMethod_StrToStr:(NSString *)cipherText;
 
 @end

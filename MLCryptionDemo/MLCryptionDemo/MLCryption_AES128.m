@@ -37,13 +37,13 @@ CCCryptorRef cryptorAES128 = NULL;
 /**AES128 输入一个Data数据，返回一个加密后的Data数据 */
 - (NSData *)ml_encryptUseAES128_DataToData:(NSData *)plainData;
 {
-    return [self cryptorCommonMethodWihtData:plainData MLOperation:kMLEncrypt Algorithm:kMLAlgorithmAES128 iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeAES128 kCCBlockSize:kCCBlockSizeAES128];
+    return [self cryptorCommonMethodWihtData:plainData MLOperation:kCCEncrypt Algorithm:kCCAlgorithmAES128 iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeAES128 kCCBlockSize:kCCBlockSizeAES128];
 }
 
 /**AES128 输入一个加密Data数据，返回一个解密后的Data数据 */
 - (NSData *)ml_decryptUseAES128_DataToData:(NSData *)cipherData
 {
-    return [self cryptorCommonMethodWihtData:cipherData MLOperation:kMLDecrypt Algorithm:kMLAlgorithmAES128 iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeAES128 kCCBlockSize:kCCBlockSizeAES128];
+    return [self cryptorCommonMethodWihtData:cipherData MLOperation:kCCDecrypt Algorithm:kCCAlgorithmAES128 iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeAES128 kCCBlockSize:kCCBlockSizeAES128];
 }
 
 

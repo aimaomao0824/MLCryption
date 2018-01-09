@@ -36,13 +36,13 @@ CCCryptorRef cryptorCAST = NULL;
 /**CAST 输入一个Data数据，返回一个加密后的Data数据 */
 - (NSData *)ml_encryptUseCAST_DataToData:(NSData *)plainData;
 {
-    return [self cryptorCommonMethodWihtData:plainData MLOperation:kMLEncrypt Algorithm:kMLAlgorithmCAST iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeMaxCAST kCCBlockSize:kCCBlockSizeCAST];
+    return [self cryptorCommonMethodWihtData:plainData MLOperation:kCCEncrypt Algorithm:kCCAlgorithmCAST iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeMaxCAST kCCBlockSize:kCCBlockSizeCAST];
 }
 
 /**CAST 输入一个加密Data数据，返回一个解密后的Data数据 */
 - (NSData *)ml_decryptUseCAST_DataToData:(NSData *)cipherData
 {
-    return [self cryptorCommonMethodWihtData:cipherData MLOperation:kMLDecrypt Algorithm:kMLAlgorithmCAST iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeMaxCAST kCCBlockSize:kCCBlockSizeCAST];
+    return [self cryptorCommonMethodWihtData:cipherData MLOperation:kCCDecrypt Algorithm:kCCAlgorithmCAST iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeMaxCAST kCCBlockSize:kCCBlockSizeCAST];
 }
 
 

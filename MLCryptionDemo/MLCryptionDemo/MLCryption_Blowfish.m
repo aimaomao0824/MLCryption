@@ -35,13 +35,13 @@ CCCryptorRef cryptorBlowfish = NULL;
 /**Blowfish 输入一个Data数据，返回一个加密后的Data数据 */
 - (NSData *)ml_encryptUseBlowfish_DataToData:(NSData *)plainData;
 {
-    return [self cryptorCommonMethodWihtData:plainData MLOperation:kMLEncrypt Algorithm:kMLAlgorithmBlowfish iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeMaxBlowfish kCCBlockSize:kCCBlockSizeBlowfish];
+    return [self cryptorCommonMethodWihtData:plainData MLOperation:kCCEncrypt Algorithm:kCCAlgorithmBlowfish iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeMaxBlowfish kCCBlockSize:kCCBlockSizeBlowfish];
 }
 
 /**Blowfish 输入一个加密Data数据，返回一个解密后的Data数据 */
 - (NSData *)ml_decryptUseBlowfish_DataToData:(NSData *)cipherData
 {
-    return [self cryptorCommonMethodWihtData:cipherData MLOperation:kMLDecrypt Algorithm:kMLAlgorithmBlowfish iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeMaxBlowfish kCCBlockSize:kCCBlockSizeBlowfish];
+    return [self cryptorCommonMethodWihtData:cipherData MLOperation:kCCDecrypt Algorithm:kCCAlgorithmBlowfish iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeMaxBlowfish kCCBlockSize:kCCBlockSizeBlowfish];
 }
 
 
