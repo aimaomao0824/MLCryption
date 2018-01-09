@@ -31,13 +31,14 @@ typedef struct _CCCryptor *CMLryptorRef;
 /** MLKeySize */
 @property (nonatomic, assign) int keySize;
 
+#pragma mark - 设置加密或解密
 enum {
     kMLEncrypt = 0,
     kMLDecrypt,
 };
 typedef uint32_t MLOperation;
 
-
+#pragma mark - 设置密钥加密的类型
 enum {
     kMLAlgorithmAES128 = 0,
     kMLAlgorithmAES = 0,
@@ -50,6 +51,7 @@ enum {
 };
 typedef uint32_t MLAlgorithm;
 
+#pragma mark - 设置密钥的长度位数
 enum {
     kMLKeySizeAES128          = 16,
     kMLKeySizeAES192          = 24,
@@ -66,6 +68,22 @@ enum {
     kMLKeySizeMaxBlowfish     = 56,
 };
 typedef int MLKeySize;
+
+#pragma mark - 设置iv向量的长度位数
+enum {
+    /* AES */
+    kMLBlockSizeAES128        = 16,
+    /* DES */
+    kMLBlockSizeDES           = 8,
+    /* 3DES */
+    kMLBlockSize3DES          = 8,
+    /* CAST */
+    kMLBlockSizeCAST          = 8,
+    kMLBlockSizeRC2           = 8,
+    kMLBlockSizeBlowfish      = 8,
+};
+typedef int MLIvSize;
+
 
 enum {
     kMLModeECB		= 1,
@@ -102,6 +120,6 @@ enum {
 typedef uint32_t MLOptions;
 
 - (NSData *)test_cryptorCommonMethodWihtData:(NSData *)textData MLOperation:(MLOperation)op MLMode:(MLMode)mode Algorithm:(MLAlgorithm)alg Padding:(CCOptions)padding iv:(const void *)iv key:(const void *)key keySize:(int)keySize tweak:(const void *)tweak tweakLength:(size_t)tweakLength numRounds:(int)numRounds CCModeOptions:(CCModeOptions)options cryptor:(CMLryptorRef)cryptor;
-- (NSData *)cryptorCommonMethodWihtData:(NSData *)textData MLOperation:(MLOperation)op Algorithm:(MLAlgorithm)alg iv:(const void *)iv key:(const void *)key keySize:(MLKeySize)keySize kCCBlockSize:(int)kCCBlockSize;
+- (NSData *)cryptorCommonMethodWihtData:(NSData *)textData MLOperation:(MLOperation)op Algorithm:(MLAlgorithm)alg iv:(const void *)iv key:(const void *)key keySize:(MLKeySize)keySize kCCBlockSize:(MLIvSize)kCCBlockSize;
 
 @end

@@ -12,7 +12,9 @@
 #import "MLCryption_DES.h"
 #import "MLCryption_3DES.h"
 #import "MLCryption_AES128.h"
-
+#import "MLCryption_CAST.h"
+#import "MLCryption_RC2.h"
+#import "MLCryption_Blowfish.h"
 @interface ViewController ()
 
 @end
@@ -21,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self testAES128];
+    [self testBlowfish];
 
     
 }
@@ -70,20 +72,52 @@
     NSLog(@"AES128-->>原文：%@，key：%@，iv：%s，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
 }
 
-# pragma mark - 1.AES加密和解密
--(void)testAES
+# pragma mark - 1.CAST加密和解密
+-(void)testCAST
 {
     NSString *str = @"满泰科技";
-    NSString *key = @"123123123";
-    const void *iv = @"12345670";
+    NSString *key = @"1234567890123456";
+    const void *iv = @"12345678";
     //    const void *iv = nil;
     //    const Byte iv[] = {1,2,3,4,5,6,7,8};
     
-    //    MLCryptor *cryption = [[MLCryptor alloc] initWith_3DES_Mode:kMLModeCBC MLPadding:MLPKCS7Padding key:key iv:iv ivMode:ivString];
-    MLCryptor *cryptor = [MLCryptor cryption_3DES_Mode:kMLModeCBC MLPadding:MLPKCS7Padding key:key iv:iv ivMode:ivString];
-    NSString *crypStr = [cryptor ml_encryptUse3Des_StrToStr:str];
-    NSString *deCrypStr = [cryptor ml_decryptUse3Des_StrToStr:crypStr];
-    NSLog(@"3DES-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+    //    MLCryptor *cryption = [[MLCryptor alloc] initWith_CAST_Mode:kMLModeCBC MLPadding:MLPKCS7Padding key:key iv:iv ivMode:ivString];
+    MLCryption_CAST *cryptor = [MLCryption_CAST cryptionCAST_key:key iv:iv ivMode:ivString];
+    NSString *crypStr = [cryptor ml_encryptUseCAST_StrToStr:str];
+    NSString *deCrypStr = [cryptor ml_decryptUseCAST_StrToStr:crypStr];
+    NSLog(@"CAST-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+}
+
+# pragma mark - 1.RC2加密和解密
+-(void)testRC2
+{
+    NSString *str = @"满泰科技";
+    //128为key
+    NSString *key = @"12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345670";
+    const void *iv = @"12345678";
+    //    const void *iv = nil;
+    //    const Byte iv[] = {1,2,3,4,5,6,7,8};
+    
+    MLCryption_RC2 *cryption = [MLCryption_RC2 cryptionRC2_key:key iv:iv ivMode:ivString];
+    NSString *crypStr = [cryption ml_encryptUseRC2_StrToStr:str];
+    NSString *deCrypStr = [cryption ml_decryptUseRC2_StrToStr:crypStr];
+    NSLog(@"RC2-->>原文：%@，key：%@，iv：%s，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+}
+
+# pragma mark - 1.Blowfish加密和解密
+-(void)testBlowfish
+{
+    NSString *str = @"满泰科技";
+    //56位key
+    NSString *key = @"12345678901234567890123456789012345678901234567890123456";
+    const void *iv = @"12345678";
+    //    const void *iv = nil;
+    //    const Byte iv[] = {1,2,3,4,5,6,7,8};
+    
+    MLCryption_Blowfish *cryption = [MLCryption_Blowfish cryptionBlowfish_key:key iv:iv ivMode:ivString];
+    NSString *crypStr = [cryption ml_encryptUseBlowfish_StrToStr:str];
+    NSString *deCrypStr = [cryption ml_decryptUseBlowfish_StrToStr:crypStr];
+    NSLog(@"Blowfish-->>原文：%@，key：%@，iv：%s，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
 }
 
 

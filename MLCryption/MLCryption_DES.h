@@ -20,10 +20,10 @@
 - (instancetype)initWithDES_key:(NSString *)key iv:(const void *)iv ivMode:(ivMode)ivMode;
 
 # pragma mark - DES加密解密方法
-/**3DES 输入一个NSString数据，返回一个加密/解密后的NSString数据 */
+/**DES 输入一个NSString数据，返回一个加密/解密后的NSString数据 */
 - (NSString *)ml_encryptUseDes_StrToStr:(NSString *)plainText;
 - (NSString *)ml_decryptUseDes_StrToStr:(NSString *)cipherText;
-/**3DES 输入一个Data数据，返回一个加密/解密后的Data数据 */
+/**DES 输入一个Data数据，返回一个加密/解密后的Data数据 */
 - (NSData *)ml_encryptUseDes_DataToData:(NSData *)plainText;
 - (NSData *)ml_decryptUseDes_DataToData:(NSData *)cipherText;
 

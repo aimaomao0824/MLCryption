@@ -34,20 +34,20 @@ CCCryptorRef cryptorDES = NULL;
 }
 
 # pragma mark - DES加密和解密
-/**3DES 输入一个Data数据，返回一个加密后的Data数据 */
+/**DES 输入一个Data数据，返回一个加密后的Data数据 */
 - (NSData *)ml_encryptUseDes_DataToData:(NSData *)plainData;
 {
   return [self cryptorCommonMethodWihtData:plainData MLOperation:kMLEncrypt Algorithm:kMLAlgorithmDES iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeDES kCCBlockSize:kCCBlockSizeDES];
 }
 
-/**3DES 输入一个加密Data数据，返回一个解密后的Data数据 */
+/**DES 输入一个加密Data数据，返回一个解密后的Data数据 */
 - (NSData *)ml_decryptUseDes_DataToData:(NSData *)cipherData
 {
     return [self cryptorCommonMethodWihtData:cipherData MLOperation:kMLDecrypt Algorithm:kMLAlgorithmDES iv:self.iv key:[self.key UTF8String]  keySize:kMLKeySizeDES kCCBlockSize:kCCBlockSizeDES];
 }
 
 
-/**3DES 输入一个NSString数据，返回一个加密后的NSString数据 */
+/**DES 输入一个NSString数据，返回一个加密后的NSString数据 */
 - (NSString *)ml_encryptUseDes_StrToStr:(NSString *)plainText
 {
     NSData *textData = [plainText dataUsingEncoding:NSUTF8StringEncoding];
@@ -57,7 +57,7 @@ CCCryptorRef cryptorDES = NULL;
     return ciphertext;
 }
 
-/**3DES 输入一个加密的NSString数据，返回一个解密后的NSString数据 */
+/**DES 输入一个加密的NSString数据，返回一个解密后的NSString数据 */
 - (NSString *)ml_decryptUseDes_StrToStr:(NSString *)cipherText
 {
     NSData *textData = [[NSData alloc]initWithBase64EncodedString:cipherText options:0];
