@@ -7,14 +7,8 @@
 //
 
 #import "ViewController.h"
-//#import "MLCryption.h"
-#import "MLCryptor.h"
-#import "MLCryption_DES.h"
-#import "MLCryption_3DES.h"
-#import "MLCryption_AES128.h"
-#import "MLCryption_CAST.h"
-#import "MLCryption_RC2.h"
-#import "MLCryption_Blowfish.h"
+#import "MLCryption.h"
+
 @interface ViewController ()
 
 @end
