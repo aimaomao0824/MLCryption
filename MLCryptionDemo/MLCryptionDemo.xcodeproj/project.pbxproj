@@ -47,7 +47,7 @@
 /* Begin PBXFileReference section */
 		589731281FFBD538003318AF /* MLCryptionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLCryptionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5897312C1FFBD538003318AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5897312E1FFBD538003318AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5897312E1FFBD538003318AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = MLCryptionDemo/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		5897312F1FFBD538003318AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		589731311FFBD538003318AF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		589731321FFBD538003318AF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -132,8 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				589FE96E20051A4C00C59084 /* MLCryption */,
-				5897312F1FFBD538003318AF /* AppDelegate.m */,
 				5897312E1FFBD538003318AF /* AppDelegate.h */,
+				5897312F1FFBD538003318AF /* AppDelegate.m */,
 				589731311FFBD538003318AF /* ViewController.h */,
 				589731321FFBD538003318AF /* ViewController.m */,
 				589731341FFBD538003318AF /* Main.storyboard */,

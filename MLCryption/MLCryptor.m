@@ -31,7 +31,7 @@
  *
  *  @return 返回一个初始化后的加密器cryptor
  */
-+ (instancetype)cryptorCommonMethodCBC_PK7WithAlgorithm:(CCAlgorithm)alg key:(NSString *)key keySize:(MLKeySize)keySize iv:(const void *) iv ivMode:(ivMode)ivMode  ivSize:(MLIvSize)ivSize
++ (instancetype)cryptorCommonMethodCBC_PK7WithAlgorithm:(CCAlgorithm)alg key:(NSString *)key keySize:(MLKeySize)keySize iv:(const void *)iv ivMode:(ivMode)ivMode  ivSize:(MLIvSize)ivSize
 {
     return [[MLCryptor alloc] initCommonMethodCBC_PK7WithAlgorithm:alg key:key keySize:keySize iv:iv ivMode:ivMode ivSize:ivSize];
 }
@@ -65,9 +65,9 @@
 }
 
 # pragma mark - 多参数模式公共加密器初始化
-+ (instancetype)cryptorCommonMethodWithMode:(CCMode)mode Algorithm:(CCAlgorithm)alg Padding:(CCPadding)padding iv:(const void *)iv ivMode:(ivMode)ivMode key:(NSString *)key keySize:(MLKeySize)keySize tweak:(NSString *)tweak tweakSize:(MLKeySize)tweakLength numRounds:(int)numRounds ModeOptions:(CCModeOptions)options;
++ (instancetype)cryptorCommonMethodWithMode:(CCMode)mode Algorithm:(CCAlgorithm)alg Padding:(CCPadding)padding iv:(const void *)iv ivSize:(MLIvSize)ivSize ivMode:(ivMode)ivMode key:(NSString *)key keySize:(MLKeySize)keySize tweak:(NSString *)tweak tweakSize:(MLKeySize)tweakLength numRounds:(int)numRounds ModeOptions:(CCModeOptions)options;
 {
-    return [[MLCryptor alloc] initCommonMethodWithMode:mode Algorithm:alg Padding:padding iv:iv ivMode:ivMode key:key keySize:keySize tweak:tweak tweakSize:tweakLength numRounds:numRounds ModeOptions:options];
+    return [[MLCryptor alloc] initCommonMethodWithMode:mode Algorithm:alg Padding:padding iv:iv  ivSize:(MLIvSize)ivSize ivMode:ivMode key:key keySize:keySize tweak:tweak tweakSize:tweakLength numRounds:numRounds ModeOptions:options];
 }
 
 /**
@@ -88,7 +88,7 @@
  *
  *  @return 返回加密器
  */
-- (instancetype)initCommonMethodWithMode:(CCMode)mode Algorithm:(CCAlgorithm)alg Padding:(CCPadding)padding iv:(const void *)iv ivMode:(ivMode)ivMode key:(NSString *)key keySize:(MLKeySize)keySize tweak:(NSString *)tweak tweakSize:(MLKeySize)tweakSize numRounds:(int)numRounds ModeOptions:(CCModeOptions)options;
+- (instancetype)initCommonMethodWithMode:(CCMode)mode Algorithm:(CCAlgorithm)alg Padding:(CCPadding)padding iv:(const void *)iv ivSize:(MLIvSize)ivSize ivMode:(ivMode)ivMode key:(NSString *)key keySize:(MLKeySize)keySize tweak:(NSString *)tweak tweakSize:(MLKeySize)tweakSize numRounds:(int)numRounds ModeOptions:(CCModeOptions)options;
 {
     if (self = [super init]) {
         self.isSampleCryptor = NO;
@@ -100,6 +100,7 @@
         }else{
             self.iv = iv;
         }
+        self.ivSize = ivSize;
         self.key = key;
         self.keySize = keySize;
         if (self.mode == kCCModeXTS) {
@@ -131,7 +132,7 @@
     if (self.isSampleCryptor) {
         return [self cryptorCommonMethodWihtData:plainData MLOperation:kCCEncrypt Algorithm:self.alg iv:self.iv key:[self.key UTF8String]  keySize:self.keySize kCCBlockSize:self.ivSize];
     }else{
-        return [self cryptorAllParasCommonMethodWihtData:plainData Operation:kCCEncrypt Mode:self.mode Algorithm:self.alg Padding:self.padding iv:self.iv key:[self.key UTF8String]keySize:self.keySize tweak:[self.tweak UTF8String] tweakLength:self.tweakSize numRounds:self.numRounds ModeOptions:self.options];
+        return [self cryptorAllParasCommonMethodWihtData:plainData Operation:kCCEncrypt Mode:self.mode Algorithm:self.alg Padding:self.padding iv:self.iv kCCBlockSize:self.ivSize key:[self.key UTF8String]keySize:self.keySize tweak:[self.tweak UTF8String] tweakLength:self.tweakSize numRounds:self.numRounds ModeOptions:self.options];
     }
 }
 
@@ -141,7 +142,7 @@
     if (self.isSampleCryptor) {
         return [self cryptorCommonMethodWihtData:cipherData MLOperation:kCCDecrypt Algorithm:self.alg iv:self.iv key:[self.key UTF8String]  keySize:self.keySize kCCBlockSize:self.ivSize];
     }else{
-        return [self cryptorAllParasCommonMethodWihtData:cipherData Operation:kCCDecrypt Mode:self.mode Algorithm:self.alg Padding:self.padding iv:self.iv key:[self.key UTF8String]keySize:self.keySize tweak:[self.tweak UTF8String] tweakLength:self.tweakSize numRounds:self.numRounds ModeOptions:self.options];
+        return [self cryptorAllParasCommonMethodWihtData:cipherData Operation:kCCDecrypt Mode:self.mode Algorithm:self.alg Padding:self.padding iv:self.iv kCCBlockSize:self.ivSize key:[self.key UTF8String]keySize:self.keySize tweak:[self.tweak UTF8String] tweakLength:self.tweakSize numRounds:self.numRounds ModeOptions:self.options];
     }
 }
 

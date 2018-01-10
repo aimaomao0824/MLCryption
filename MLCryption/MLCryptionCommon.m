@@ -29,7 +29,7 @@ CCCryptorRef cryptor = NULL;
  *
  *  @return 加密或解密后的数据Data
  */
-- (NSData *)cryptorAllParasCommonMethodWihtData:(NSData *)textData Operation:(CCOperation)op Mode:(CCMode)mode Algorithm:(CCAlgorithm)alg Padding:(CCPadding)padding iv:(const void *)iv key:(const void *)key keySize:(MLKeySize)keySize tweak:(const void *)tweak tweakLength:(MLKeySize)tweakLength numRounds:(int)numRounds ModeOptions:(CCModeOptions)options
+- (NSData *)cryptorAllParasCommonMethodWihtData:(NSData *)textData Operation:(CCOperation)op Mode:(CCMode)mode Algorithm:(CCAlgorithm)alg Padding:(CCPadding)padding iv:(const void *)iv kCCBlockSize:(MLIvSize)kCCBlockSize key:(const void *)key keySize:(MLKeySize)keySize tweak:(const void *)tweak tweakLength:(MLKeySize)tweakLength numRounds:(int)numRounds ModeOptions:(CCModeOptions)options
 {
     //1.创建加密器CCCryptorRef
     CCCryptorStatus cryptorStatus = CCCryptorCreateWithMode(op, mode, alg, padding, iv, key, keySize, tweak, tweakLength, numRounds, options, &cryptor);
@@ -40,7 +40,8 @@ CCCryptorRef cryptor = NULL;
     size_t total = 0;
     
     //2.获取输出数据的最大长度
-    bufsize = CCCryptorGetOutputLength(cryptor, textData.length, true);
+//    bufsize = CCCryptorGetOutputLength(cryptor, textData.length, true);
+    bufsize = textData.length + kCCBlockSize;
     char * buf = (char*)malloc(bufsize);//输出outData
     bzero(buf, bufsize);
     

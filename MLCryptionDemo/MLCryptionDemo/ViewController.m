@@ -18,20 +18,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"一------------------下使用d单个加密-----------------------，加密");
+    NSLog(@"一--------------------------------------------------------------");
+    NSLog(@"一------------------下使用单个加密器使用-----------------------，加密");
     [self testDES];
     [self test3DES];
     [self testAES128];
     [self testCAST];
     [self testRC2];
     [self testBlowfish];
-    NSLog(@"一------------------下使用加密器-----------------------，加密");
+    
+    NSLog(@"一--------------------------------------------------------------");
+    NSLog(@"一------------------CBC—PK7模式下使用加密器-----------------------，加密");
     [self cryptor_des];
     [self cryptor_3des];
     [self cryptor_aes128];
     [self cryptor_cast];
     [self cryptor_rc2];
     [self cryptor_blowfish];
+    
+    NSLog(@"一--------------------------------------------------------------");
+    NSLog(@"一------------------多参数下使用加密器-----------------------，加密");
+    [self cryptor_des_moreParms];
+    [self cryptor_3des_moreParms];
+    [self cryptor_aes128_moreParms];
+    [self cryptor_cast_moreParms];
+    [self cryptor_rc2_moreParms];
+    [self cryptor_blowfish_moreParms];
 
     
 }
@@ -39,7 +51,7 @@
 # pragma mark - 1.DES加密和解密 CBC->pkcs7padding->Base64->utf8编码
 -(void)testDES
 {
-    NSString *str = @"满泰科技";
+    NSString *str = @"代码测试";
     NSString *key = @"123456709";
         const void *iv = @"12345670";
 //    const Byte iv[] = {1,2,3,4,5,6,7,8};
@@ -47,13 +59,13 @@
     MLCryption_DES *cryption = [MLCryption_DES cryptionDES_key:key iv:iv ivMode:ivString];
     NSString *crypStr = [cryption ml_encryptUseDes_StrToStr:str];
     NSString *deCrypStr = [cryption ml_decryptUseDes_StrToStr:crypStr];
-    NSLog(@"DES-->>原文：%@，key：%@，iv：%s，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+    NSLog(@"DES-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
 }
 
 # pragma mark - 1.3DES加密和解密
 -(void)test3DES
 {
-    NSString *str = @"满泰科技";
+    NSString *str = @"代码测试";
     NSString *key = @"123456789012345678909999";
     const void *iv = @"12345670999";
 //    const void *iv = nil;
@@ -62,13 +74,13 @@
     MLCryption_3DES *cryption = [MLCryption_3DES cryption3DES_key:key iv:iv ivMode:ivString];
     NSString *crypStr = [cryption ml_encryptUse3DES_StrToStr:str];
     NSString *deCrypStr = [cryption ml_decryptUse3DES_StrToStr:crypStr];
-    NSLog(@"3DES-->>原文：%@，key：%@，iv：%s，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+    NSLog(@"3DES-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
 }
 
 # pragma mark - 1.AES128加密和解密
 -(void)testAES128
 {
-    NSString *str = @"满泰科技";
+    NSString *str = @"代码测试";
     NSString *key = @"123456789012345699";
     const void *iv = @"1234567890123456";
     //    const void *iv = nil;
@@ -77,13 +89,13 @@
     MLCryption_AES128 *cryption = [MLCryption_AES128 cryptionAES128_key:key iv:iv ivMode:ivString];
     NSString *crypStr = [cryption ml_encryptUseAES128_StrToStr:str];
     NSString *deCrypStr = [cryption ml_decryptUseAES128_StrToStr:crypStr];
-    NSLog(@"AES128-->>原文：%@，key：%@，iv：%s，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+    NSLog(@"AES128-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
 }
 
 # pragma mark - 1.CAST加密和解密
 -(void)testCAST
 {
-    NSString *str = @"满泰科技";
+    NSString *str = @"代码测试";
     NSString *key = @"1234567890123456";
     const void *iv = @"12345678";
     //    const void *iv = nil;
@@ -99,7 +111,7 @@
 # pragma mark - 1.RC2加密和解密
 -(void)testRC2
 {
-    NSString *str = @"满泰科技";
+    NSString *str = @"代码测试";
     //128为key
     NSString *key = @"12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345670";
     const void *iv = @"12345678";
@@ -109,13 +121,13 @@
     MLCryption_RC2 *cryption = [MLCryption_RC2 cryptionRC2_key:key iv:iv ivMode:ivString];
     NSString *crypStr = [cryption ml_encryptUseRC2_StrToStr:str];
     NSString *deCrypStr = [cryption ml_decryptUseRC2_StrToStr:crypStr];
-    NSLog(@"RC2-->>原文：%@，key：%@，iv：%s，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+    NSLog(@"RC2-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
 }
 
 # pragma mark - 1.Blowfish加密和解密
 -(void)testBlowfish
 {
-    NSString *str = @"满泰科技";
+    NSString *str = @"代码测试";
     //56位key
     NSString *key = @"12345678901234567890123456789012345678901234567890123456";
     const void *iv = @"12345678";
@@ -125,13 +137,13 @@
     MLCryption_Blowfish *cryption = [MLCryption_Blowfish cryptionBlowfish_key:key iv:iv ivMode:ivString];
     NSString *crypStr = [cryption ml_encryptUseBlowfish_StrToStr:str];
     NSString *deCrypStr = [cryption ml_decryptUseBlowfish_StrToStr:crypStr];
-    NSLog(@"Blowfish-->>原文：%@，key：%@，iv：%s，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+    NSLog(@"Blowfish-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
 }
 
 # pragma mark - 1.cryptor加密器的使用CBC-pk7
 - (void)cryptor_des
 {
-    NSString *str = @"满泰科技";
+    NSString *str = @"代码测试";
     NSString *key = @"123456709";
     const void *iv = @"12345670";
     //    const Byte iv[] = {1,2,3,4,5,6,7,8};
@@ -144,7 +156,7 @@
 
 - (void)cryptor_3des
 {
-    NSString *str = @"满泰科技";
+    NSString *str = @"代码测试";
     NSString *key = @"123456789012345678909999";
     const void *iv = @"12345670999";
     
@@ -156,7 +168,7 @@
 
 - (void)cryptor_aes128
 {
-    NSString *str = @"满泰科技";
+    NSString *str = @"代码测试";
     NSString *key = @"123456789012345699";
     const void *iv = @"1234567890123456";
     
@@ -167,7 +179,7 @@
 }
 - (void)cryptor_cast
 {
-    NSString *str = @"满泰科技";
+    NSString *str = @"代码测试";
     NSString *key = @"123456789012345699";
     const void *iv = @"1234567890123456";
     
@@ -178,7 +190,7 @@
 }
 - (void)cryptor_rc2
 {
-    NSString *str = @"满泰科技";
+    NSString *str = @"代码测试";
     //128为key
     NSString *key = @"12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345670";
     const void *iv = @"12345678";
@@ -190,7 +202,7 @@
 }
 - (void)cryptor_blowfish
 {
-    NSString *str = @"满泰科技";
+    NSString *str = @"代码测试";
     //56位key
     NSString *key = @"12345678901234567890123456789012345678901234567890123456";
     const void *iv = @"12345678";
@@ -199,6 +211,96 @@
     NSString *crypStr = [cryptorCBC_PK7 ml_encryptCommonMethod_StrToStr:str];
     NSString *deCrypStr = [cryptorCBC_PK7 ml_decryptCommonMethod_StrToStr:crypStr];
     NSLog(@"cryptor_blowfish-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+}
+
+#pragma mark - 多参数加密器的使用
+
+- (void)cryptor_des_moreParms
+{
+    NSString *str = @"代码测试";
+    NSString *key = @"123456709";
+    const void *iv = @"12345670";
+    //    const Byte iv[] = {1,2,3,4,5,6,7,8};
+    
+    #pragma mark - ECB模式下：不用向量iv= nil，
+//    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeECB Algorithm:kCCAlgorithmDES Padding:ccPKCS7Padding iv:nil  ivSize:(MLIvSize)kMLBlockSizeDES ivMode:ivString key:key keySize:kMLKeySizeDES tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
+    
+    #pragma mark - CBC模式下：
+    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeCBC Algorithm:kCCAlgorithmDES Padding:ccPKCS7Padding iv:iv  ivSize:(MLIvSize)kMLBlockSizeDES ivMode:ivString key:key keySize:kMLKeySizeDES tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
+    
+    #pragma mark - CFB模式下：ccNoPadding「不用补位」,注意其它平台是用CFB,还是CFB8模式「与http://tool.chacuo.net/cryptdes，测试出来结果少几个字符串。待解决」
+//    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeCFB8 Algorithm:kCCAlgorithmDES Padding:ccNoPadding iv:iv  ivSize:(MLIvSize)kMLBlockSizeDES  ivMode:ivString key:key keySize:kMLKeySizeDES tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
+    
+    #pragma mark - OFB模式下：ccNoPadding「不用补位」「与http://tool.chacuo.net/cryptdes，测试出来结果不一样。待解决」
+//        MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeOFB Algorithm:kCCAlgorithmDES Padding:ccNoPadding iv:iv  ivSize:(MLIvSize)kMLBlockSizeDES ivMode:ivString key:key keySize:kMLKeySizeDES tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
+    
+    #pragma mark - CTR模式下：ccNoPadding「不用补位」，ModeOptions为「kCCModeOptionCTR_BE」「与http://tool.chacuo.net/cryptdes，测试出来结果少几个字符串。待解决」
+//    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeCTR Algorithm:kCCAlgorithmDES Padding:ccNoPadding iv:iv  ivSize:(MLIvSize)kMLBlockSizeDES ivMode:ivString key:key keySize:kMLKeySizeDES tweak:NULL tweakSize:0 numRounds:0 ModeOptions:kCCModeOptionCTR_BE];
+    
+    
+    NSString *crypStr = [cryptor_moreParms ml_encryptCommonMethod_StrToStr:str];
+    NSString *deCrypStr = [cryptor_moreParms ml_decryptCommonMethod_StrToStr:crypStr];
+    NSLog(@"cryptor_des_moreParms-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+}
+
+- (void)cryptor_3des_moreParms
+{
+    NSString *str = @"代码测试";
+    NSString *key = @"123456789012345678909999";
+    const void *iv = @"12345670999";
+    
+    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeCBC Algorithm:kCCAlgorithm3DES Padding:ccPKCS7Padding iv:iv  ivSize:(MLIvSize)kMLBlockSize3DES  ivMode:ivString key:key keySize:kMLKeySize3DES tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
+    NSString *crypStr = [cryptor_moreParms ml_encryptCommonMethod_StrToStr:str];
+    NSString *deCrypStr = [cryptor_moreParms ml_decryptCommonMethod_StrToStr:crypStr];
+    NSLog(@"cryptor_3des_moreParms-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+}
+
+- (void)cryptor_aes128_moreParms
+{
+    NSString *str = @"代码测试";
+    NSString *key = @"123456789012345699";
+    const void *iv = @"1234567890123456";
+    
+    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeCBC Algorithm:kCCAlgorithmAES128 Padding:ccPKCS7Padding iv:iv ivSize:(MLIvSize)kMLBlockSizeAES128 ivMode:ivString key:key keySize:kMLKeySizeAES128 tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
+    NSString *crypStr = [cryptor_moreParms ml_encryptCommonMethod_StrToStr:str];
+    NSString *deCrypStr = [cryptor_moreParms ml_decryptCommonMethod_StrToStr:crypStr];
+    NSLog(@"cryptor_aes128_moreParms-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+}
+
+- (void)cryptor_cast_moreParms
+{
+    NSString *str = @"代码测试";
+    NSString *key = @"123456789012345699";
+    const void *iv = @"1234567890123456";
+    
+    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeCBC Algorithm:kCCAlgorithmCAST Padding:ccPKCS7Padding iv:iv ivSize:(MLIvSize)kMLBlockSizeCAST ivMode:ivString key:key keySize:kMLKeySizeMaxCAST tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
+    NSString *crypStr = [cryptor_moreParms ml_encryptCommonMethod_StrToStr:str];
+    NSString *deCrypStr = [cryptor_moreParms ml_decryptCommonMethod_StrToStr:crypStr];
+    NSLog(@"cryptor_cast_moreParms-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+}
+- (void)cryptor_rc2_moreParms
+{
+    NSString *str = @"代码测试";
+    //128为key
+    NSString *key = @"12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345670";
+    const void *iv = @"12345678";
+    
+    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeCBC Algorithm:kCCAlgorithmRC2 Padding:ccPKCS7Padding iv:iv ivSize:(MLIvSize)kMLBlockSizeRC2 ivMode:ivString key:key keySize:kMLKeySizeMaxRC2 tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
+    NSString *crypStr = [cryptor_moreParms ml_encryptCommonMethod_StrToStr:str];
+    NSString *deCrypStr = [cryptor_moreParms ml_decryptCommonMethod_StrToStr:crypStr];
+    NSLog(@"cryptor_rc2_moreParms-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
+}
+- (void)cryptor_blowfish_moreParms
+{
+    NSString *str = @"代码测试";
+    //56位key
+    NSString *key = @"12345678901234567890123456789012345678901234567890123456";
+    const void *iv = @"12345678";
+    
+    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeCBC Algorithm:kCCAlgorithmBlowfish Padding:ccPKCS7Padding iv:iv ivSize:(MLIvSize)kMLBlockSizeBlowfish ivMode:ivString key:key keySize:kMLKeySizeMaxBlowfish tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
+    NSString *crypStr = [cryptor_moreParms ml_encryptCommonMethod_StrToStr:str];
+    NSString *deCrypStr = [cryptor_moreParms ml_decryptCommonMethod_StrToStr:crypStr];
+    NSLog(@"cryptor_blowfish_moreParms-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
 }
 
 
