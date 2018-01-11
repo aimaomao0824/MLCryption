@@ -7,6 +7,8 @@
 //
 
 #import "MLCryptionCommon.h"
+#import <CommonCrypto/CommonCryptor.h>
+
 
 @implementation MLCryptionCommon
 CCCryptorRef cryptor = NULL;

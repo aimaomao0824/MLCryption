@@ -23,7 +23,7 @@
  *
  *  @return 返回一个初始化后的加密器cryptor
  */
-+ (instancetype)cryptorCommonMethodCBC_PK7WithAlgorithm:(CCAlgorithm)alg key:(NSString *)key keySize:(MLKeySize)keySize iv:(const void *)iv ivMode:(ivMode)ivMode  ivSize:(MLIvSize)ivSize;
++ (instancetype)cryptorCommonMethodCBC_PK7WithAlgorithm:(MLAlgorithm)alg key:(NSString *)key keySize:(MLKeySize)keySize iv:(const void *)iv ivMode:(ivMode)ivMode  ivSize:(MLIvSize)ivSize;
 /**
  *  这个模式下初始化的加密器参数默认为->CBC模式/pkcs7padding填充/Base64输出/utf8编码,
  *
@@ -36,7 +36,7 @@
  *
  *  @return 返回一个初始化后的加密器cryptor
  */
-- (instancetype)initCommonMethodCBC_PK7WithAlgorithm:(CCAlgorithm)alg key:(NSString *)key keySize:(MLKeySize)keySize iv:(const void *)iv ivMode:(ivMode)ivMode  ivSize:(MLIvSize)ivSize;
+- (instancetype)initCommonMethodCBC_PK7WithAlgorithm:(MLAlgorithm)alg key:(NSString *)key keySize:(MLKeySize)keySize iv:(const void *)iv ivMode:(ivMode)ivMode  ivSize:(MLIvSize)ivSize;
 
 
 #pragma mark - 多参数多模式下加密器初始化方法
@@ -58,7 +58,7 @@
  *
  *  @return 返回加密器
  */
-+ (instancetype)cryptorCommonMethodWithMode:(CCMode)mode Algorithm:(CCAlgorithm)alg Padding:(CCPadding)padding iv:(const void *)iv  ivSize:(MLIvSize)ivSize ivMode:(ivMode)ivMode key:(NSString *)key keySize:(MLKeySize)keySize tweak:(NSString *)tweak tweakSize:(MLKeySize)tweakSize numRounds:(int)numRounds ModeOptions:(CCModeOptions)options;
++ (instancetype)cryptorCommonMethodWithMode:(MLMode)mode Algorithm:(MLAlgorithm)alg Padding:(MLPadding)padding iv:(const void *)iv  ivSize:(MLIvSize)ivSize ivMode:(ivMode)ivMode key:(NSString *)key keySize:(MLKeySize)keySize tweak:(NSString *)tweak tweakSize:(MLKeySize)tweakSize numRounds:(int)numRounds ModeOptions:(MLModeOptions)options;
 /**
  *  多参数模式加密器初始化
  *
@@ -77,7 +77,7 @@
  *
  *  @return 返回加密器
  */
-- (instancetype)initCommonMethodWithMode:(CCMode)mode Algorithm:(CCAlgorithm)alg Padding:(CCPadding)padding iv:(const void *)iv  ivSize:(MLIvSize)ivSize ivMode:(ivMode)ivMode key:(NSString *)key keySize:(MLKeySize)keySize tweak:(NSString *)tweak tweakSize:(MLKeySize)tweakSize numRounds:(int)numRounds ModeOptions:(CCModeOptions)options;
+- (instancetype)initCommonMethodWithMode:(MLMode)mode Algorithm:(MLAlgorithm)alg Padding:(MLPadding)padding iv:(const void *)iv  ivSize:(MLIvSize)ivSize ivMode:(ivMode)ivMode key:(NSString *)key keySize:(MLKeySize)keySize tweak:(NSString *)tweak tweakSize:(MLKeySize)tweakSize numRounds:(int)numRounds ModeOptions:(MLModeOptions)options;
 
 
 #pragma mark - 加密和解密方法的调用

@@ -11,6 +11,13 @@
 
 @interface ViewController ()
 
+
+/** MLMode加密的模型如，CBC，ECB等 */
+@property (nonatomic, assign) MLMode mode;
+
+/** MLAlgorithm采用什么加密，如AES,DES等 */
+@property (nonatomic, assign) MLAlgorithm alg;
+
 @end
 
 @implementation ViewController
@@ -148,7 +155,7 @@
     const void *iv = @"12345670";
     //    const Byte iv[] = {1,2,3,4,5,6,7,8};
     
-    MLCryptor *cryptorCBC_PK7 = [MLCryptor cryptorCommonMethodCBC_PK7WithAlgorithm:kCCAlgorithmDES key:key keySize:kMLKeySizeDES iv:iv ivMode:ivString ivSize:kMLBlockSizeDES];
+    MLCryptor *cryptorCBC_PK7 = [MLCryptor cryptorCommonMethodCBC_PK7WithAlgorithm:kMLAlgorithmDES key:key keySize:kMLKeySizeDES iv:iv ivMode:ivString ivSize:kMLBlockSizeDES];
     NSString *crypStr = [cryptorCBC_PK7 ml_encryptCommonMethod_StrToStr:str];
     NSString *deCrypStr = [cryptorCBC_PK7 ml_decryptCommonMethod_StrToStr:crypStr];
     NSLog(@"cryptor_des-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
@@ -160,7 +167,7 @@
     NSString *key = @"123456789012345678909999";
     const void *iv = @"12345670999";
     
-    MLCryptor *cryptorCBC_PK7 = [MLCryptor cryptorCommonMethodCBC_PK7WithAlgorithm:kCCAlgorithm3DES key:key keySize:kMLKeySize3DES iv:iv ivMode:ivString ivSize:kMLBlockSize3DES];
+    MLCryptor *cryptorCBC_PK7 = [MLCryptor cryptorCommonMethodCBC_PK7WithAlgorithm:kMLAlgorithm3DES key:key keySize:kMLKeySize3DES iv:iv ivMode:ivString ivSize:kMLBlockSize3DES];
     NSString *crypStr = [cryptorCBC_PK7 ml_encryptCommonMethod_StrToStr:str];
     NSString *deCrypStr = [cryptorCBC_PK7 ml_decryptCommonMethod_StrToStr:crypStr];
     NSLog(@"cryptor_3des-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
@@ -172,7 +179,7 @@
     NSString *key = @"123456789012345699";
     const void *iv = @"1234567890123456";
     
-    MLCryptor *cryptorCBC_PK7 = [MLCryptor cryptorCommonMethodCBC_PK7WithAlgorithm:kCCAlgorithmAES128 key:key keySize:kMLKeySizeAES128 iv:iv ivMode:ivString ivSize:kMLBlockSizeAES128];
+    MLCryptor *cryptorCBC_PK7 = [MLCryptor cryptorCommonMethodCBC_PK7WithAlgorithm:kMLAlgorithmAES128 key:key keySize:kMLKeySizeAES128 iv:iv ivMode:ivString ivSize:kMLBlockSizeAES128];
     NSString *crypStr = [cryptorCBC_PK7 ml_encryptCommonMethod_StrToStr:str];
     NSString *deCrypStr = [cryptorCBC_PK7 ml_decryptCommonMethod_StrToStr:crypStr];
     NSLog(@"cryptor_aes128-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
@@ -183,7 +190,7 @@
     NSString *key = @"123456789012345699";
     const void *iv = @"1234567890123456";
     
-    MLCryptor *cryptorCBC_PK7 = [MLCryptor cryptorCommonMethodCBC_PK7WithAlgorithm:kCCAlgorithmCAST key:key keySize:kMLKeySizeMaxCAST iv:iv ivMode:ivString ivSize:kMLBlockSizeCAST];
+    MLCryptor *cryptorCBC_PK7 = [MLCryptor cryptorCommonMethodCBC_PK7WithAlgorithm:kMLAlgorithmCAST key:key keySize:kMLKeySizeMaxCAST iv:iv ivMode:ivString ivSize:kMLBlockSizeCAST];
     NSString *crypStr = [cryptorCBC_PK7 ml_encryptCommonMethod_StrToStr:str];
     NSString *deCrypStr = [cryptorCBC_PK7 ml_decryptCommonMethod_StrToStr:crypStr];
     NSLog(@"cryptor_cast-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
@@ -195,7 +202,7 @@
     NSString *key = @"12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345670";
     const void *iv = @"12345678";
     
-    MLCryptor *cryptorCBC_PK7 = [MLCryptor cryptorCommonMethodCBC_PK7WithAlgorithm:kCCAlgorithmRC2 key:key keySize:kMLKeySizeMaxRC2 iv:iv ivMode:ivString ivSize:kMLBlockSizeRC2];
+    MLCryptor *cryptorCBC_PK7 = [MLCryptor cryptorCommonMethodCBC_PK7WithAlgorithm:kMLAlgorithmRC2 key:key keySize:kMLKeySizeMaxRC2 iv:iv ivMode:ivString ivSize:kMLBlockSizeRC2];
     NSString *crypStr = [cryptorCBC_PK7 ml_encryptCommonMethod_StrToStr:str];
     NSString *deCrypStr = [cryptorCBC_PK7 ml_decryptCommonMethod_StrToStr:crypStr];
     NSLog(@"cryptor_rc2-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
@@ -207,7 +214,7 @@
     NSString *key = @"12345678901234567890123456789012345678901234567890123456";
     const void *iv = @"12345678";
     
-    MLCryptor *cryptorCBC_PK7 = [MLCryptor cryptorCommonMethodCBC_PK7WithAlgorithm:kCCAlgorithmBlowfish key:key keySize:kMLKeySizeMaxBlowfish iv:iv ivMode:ivString ivSize:kMLBlockSizeBlowfish];
+    MLCryptor *cryptorCBC_PK7 = [MLCryptor cryptorCommonMethodCBC_PK7WithAlgorithm:kMLAlgorithmBlowfish key:key keySize:kMLKeySizeMaxBlowfish iv:iv ivMode:ivString ivSize:kMLBlockSizeBlowfish];
     NSString *crypStr = [cryptorCBC_PK7 ml_encryptCommonMethod_StrToStr:str];
     NSString *deCrypStr = [cryptorCBC_PK7 ml_decryptCommonMethod_StrToStr:crypStr];
     NSLog(@"cryptor_blowfish-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
@@ -223,19 +230,19 @@
     //    const Byte iv[] = {1,2,3,4,5,6,7,8};
     
     #pragma mark - ECB模式下：不用向量iv= nil，
-//    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeECB Algorithm:kCCAlgorithmDES Padding:ccPKCS7Padding iv:nil  ivSize:(MLIvSize)kMLBlockSizeDES ivMode:ivString key:key keySize:kMLKeySizeDES tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
+//    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kMLModeECB Algorithm:kMLAlgorithmDES Padding:MLPKCS7Padding iv:nil  ivSize:(MLIvSize)kMLBlockSizeDES ivMode:ivString key:key keySize:kMLKeySizeDES tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
     
     #pragma mark - CBC模式下：
-    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeCBC Algorithm:kCCAlgorithmDES Padding:ccPKCS7Padding iv:iv  ivSize:(MLIvSize)kMLBlockSizeDES ivMode:ivString key:key keySize:kMLKeySizeDES tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
+    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kMLModeCBC Algorithm:kMLAlgorithmDES Padding:MLPKCS7Padding iv:iv  ivSize:(MLIvSize)kMLBlockSizeDES ivMode:ivString key:key keySize:kMLKeySizeDES tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
     
-    #pragma mark - CFB模式下：ccNoPadding「不用补位」,注意其它平台是用CFB,还是CFB8模式「与http://tool.chacuo.net/cryptdes，测试出来结果少几个字符串。待解决」
-//    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeCFB8 Algorithm:kCCAlgorithmDES Padding:ccNoPadding iv:iv  ivSize:(MLIvSize)kMLBlockSizeDES  ivMode:ivString key:key keySize:kMLKeySizeDES tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
+    #pragma mark - CFB模式下：MLNoPadding「不用补位」,注意其它平台是用CFB,还是CFB8模式「与http://tool.chacuo.net/cryptdes，测试出来结果少几个字符串。待解决」
+//    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kMLModeCFB8 Algorithm:kMLAlgorithmDES Padding:MLNoPadding iv:iv  ivSize:(MLIvSize)kMLBlockSizeDES  ivMode:ivString key:key keySize:kMLKeySizeDES tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
     
-    #pragma mark - OFB模式下：ccNoPadding「不用补位」「与http://tool.chacuo.net/cryptdes，测试出来结果不一样。待解决」
-//        MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeOFB Algorithm:kCCAlgorithmDES Padding:ccNoPadding iv:iv  ivSize:(MLIvSize)kMLBlockSizeDES ivMode:ivString key:key keySize:kMLKeySizeDES tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
+    #pragma mark - OFB模式下：MLNoPadding「不用补位」「与http://tool.chacuo.net/cryptdes，测试出来结果不一样。待解决」
+//        MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kMLModeOFB Algorithm:kMLAlgorithmDES Padding:MLNoPadding iv:iv  ivSize:(MLIvSize)kMLBlockSizeDES ivMode:ivString key:key keySize:kMLKeySizeDES tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
     
-    #pragma mark - CTR模式下：ccNoPadding「不用补位」，ModeOptions为「kCCModeOptionCTR_BE」「与http://tool.chacuo.net/cryptdes，测试出来结果少几个字符串。待解决」
-//    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeCTR Algorithm:kCCAlgorithmDES Padding:ccNoPadding iv:iv  ivSize:(MLIvSize)kMLBlockSizeDES ivMode:ivString key:key keySize:kMLKeySizeDES tweak:NULL tweakSize:0 numRounds:0 ModeOptions:kCCModeOptionCTR_BE];
+    #pragma mark - CTR模式下：MLNoPadding「不用补位」，ModeOptions为「kMLModeOptionCTR_BE」「与http://tool.chacuo.net/cryptdes，测试出来结果少几个字符串。待解决」
+//    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kMLModeCTR Algorithm:kMLAlgorithmDES Padding:MLNoPadding iv:iv  ivSize:(MLIvSize)kMLBlockSizeDES ivMode:ivString key:key keySize:kMLKeySizeDES tweak:NULL tweakSize:0 numRounds:0 ModeOptions:kMLModeOptionCTR_BE];
     
     
     NSString *crypStr = [cryptor_moreParms ml_encryptCommonMethod_StrToStr:str];
@@ -249,7 +256,7 @@
     NSString *key = @"123456789012345678909999";
     const void *iv = @"12345670999";
     
-    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeCBC Algorithm:kCCAlgorithm3DES Padding:ccPKCS7Padding iv:iv  ivSize:(MLIvSize)kMLBlockSize3DES  ivMode:ivString key:key keySize:kMLKeySize3DES tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
+    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kMLModeCBC Algorithm:kMLAlgorithm3DES Padding:MLPKCS7Padding iv:iv  ivSize:(MLIvSize)kMLBlockSize3DES  ivMode:ivString key:key keySize:kMLKeySize3DES tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
     NSString *crypStr = [cryptor_moreParms ml_encryptCommonMethod_StrToStr:str];
     NSString *deCrypStr = [cryptor_moreParms ml_decryptCommonMethod_StrToStr:crypStr];
     NSLog(@"cryptor_3des_moreParms-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
@@ -261,7 +268,7 @@
     NSString *key = @"123456789012345699";
     const void *iv = @"1234567890123456";
     
-    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeCBC Algorithm:kCCAlgorithmAES128 Padding:ccPKCS7Padding iv:iv ivSize:(MLIvSize)kMLBlockSizeAES128 ivMode:ivString key:key keySize:kMLKeySizeAES128 tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
+    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kMLModeCBC Algorithm:kMLAlgorithmAES128 Padding:MLPKCS7Padding iv:iv ivSize:(MLIvSize)kMLBlockSizeAES128 ivMode:ivString key:key keySize:kMLKeySizeAES128 tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
     NSString *crypStr = [cryptor_moreParms ml_encryptCommonMethod_StrToStr:str];
     NSString *deCrypStr = [cryptor_moreParms ml_decryptCommonMethod_StrToStr:crypStr];
     NSLog(@"cryptor_aes128_moreParms-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
@@ -273,7 +280,7 @@
     NSString *key = @"123456789012345699";
     const void *iv = @"1234567890123456";
     
-    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeCBC Algorithm:kCCAlgorithmCAST Padding:ccPKCS7Padding iv:iv ivSize:(MLIvSize)kMLBlockSizeCAST ivMode:ivString key:key keySize:kMLKeySizeMaxCAST tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
+    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kMLModeCBC Algorithm:kMLAlgorithmCAST Padding:MLPKCS7Padding iv:iv ivSize:(MLIvSize)kMLBlockSizeCAST ivMode:ivString key:key keySize:kMLKeySizeMaxCAST tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
     NSString *crypStr = [cryptor_moreParms ml_encryptCommonMethod_StrToStr:str];
     NSString *deCrypStr = [cryptor_moreParms ml_decryptCommonMethod_StrToStr:crypStr];
     NSLog(@"cryptor_cast_moreParms-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
@@ -285,7 +292,7 @@
     NSString *key = @"12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345670";
     const void *iv = @"12345678";
     
-    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeCBC Algorithm:kCCAlgorithmRC2 Padding:ccPKCS7Padding iv:iv ivSize:(MLIvSize)kMLBlockSizeRC2 ivMode:ivString key:key keySize:kMLKeySizeMaxRC2 tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
+    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kMLModeCBC Algorithm:kMLAlgorithmRC2 Padding:MLPKCS7Padding iv:iv ivSize:(MLIvSize)kMLBlockSizeRC2 ivMode:ivString key:key keySize:kMLKeySizeMaxRC2 tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
     NSString *crypStr = [cryptor_moreParms ml_encryptCommonMethod_StrToStr:str];
     NSString *deCrypStr = [cryptor_moreParms ml_decryptCommonMethod_StrToStr:crypStr];
     NSLog(@"cryptor_rc2_moreParms-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);
@@ -297,7 +304,7 @@
     NSString *key = @"12345678901234567890123456789012345678901234567890123456";
     const void *iv = @"12345678";
     
-    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kCCModeCBC Algorithm:kCCAlgorithmBlowfish Padding:ccPKCS7Padding iv:iv ivSize:(MLIvSize)kMLBlockSizeBlowfish ivMode:ivString key:key keySize:kMLKeySizeMaxBlowfish tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
+    MLCryptor *cryptor_moreParms = [MLCryptor cryptorCommonMethodWithMode:kMLModeCBC Algorithm:kMLAlgorithmBlowfish Padding:MLPKCS7Padding iv:iv ivSize:(MLIvSize)kMLBlockSizeBlowfish ivMode:ivString key:key keySize:kMLKeySizeMaxBlowfish tweak:NULL tweakSize:0 numRounds:0 ModeOptions:0];
     NSString *crypStr = [cryptor_moreParms ml_encryptCommonMethod_StrToStr:str];
     NSString *deCrypStr = [cryptor_moreParms ml_decryptCommonMethod_StrToStr:crypStr];
     NSLog(@"cryptor_blowfish_moreParms-->>原文：%@，key：%@，iv：%@，加密后：%@,解密后：%@",str,key,iv,crypStr,deCrypStr);

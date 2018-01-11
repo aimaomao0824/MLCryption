@@ -7,20 +7,78 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CommonCrypto/CommonCryptor.h>
+//#import <CommonCrypto/CommonCryptor.h>
 
 
 @interface MLCryptionCommon : NSObject
+//typedef uint32_t CCMode,CCAlgorithm,CCPadding,CCModeOptions,CCOperation;
 
 
-/** CCMode加密的模型如，CBC，ECB等 */
-@property (nonatomic, assign) CCMode mode;
+enum {
+    kMLEncrypt = 0,
+    kMLDecrypt,
+};
+typedef uint32_t MLOperation;
 
-/** CCAlgorithm采用什么加密，如AES,DES等 */
-@property (nonatomic, assign) CCAlgorithm alg;
+enum {
+    kMLAlgorithmAES128 = 0,
+    kMLAlgorithmAES = 0,
+    kMLAlgorithmDES,
+    kMLAlgorithm3DES,
+    kMLAlgorithmCAST,
+    kMLAlgorithmRC4,
+    kMLAlgorithmRC2,
+    kMLAlgorithmBlowfish
+};
+typedef uint32_t MLAlgorithm;
 
-/** CCPadding填充方式，如ccPKCS7Padding，等 */
-@property (nonatomic, assign) CCPadding padding;
+
+enum {
+    /* options for block ciphers */
+    kMLOptionPKCS7Padding   = 0x0001,
+    kMLOptionECBMode        = 0x0002
+    /* stream ciphers currently have no options */
+};
+typedef uint32_t MLOptions;
+
+
+enum {
+    kMLModeECB		= 1,
+    kMLModeCBC		= 2,
+    kMLModeCFB		= 3,
+    kMLModeCTR		= 4,
+    kMLModeF8		= 5, // Unimplemented for now (not included)
+    kMLModeLRW		= 6, // Unimplemented for now (not included)
+    kMLModeOFB		= 7,
+    kMLModeXTS		= 8,
+    kMLModeRC4		= 9,
+    kMLModeCFB8		= 10,
+};
+typedef uint32_t MLMode;
+
+
+enum {
+    kMLModeOptionCTR_LE	= 0x0001, // Deprecated in iPhoneOS 6.0 and MacOSX10.9
+    kMLModeOptionCTR_BE = 0x0002  // Deprecated in iPhoneOS 6.0 and MacOSX10.9
+};
+
+typedef uint32_t MLModeOptions;
+
+enum {
+    MLNoPadding			= 0,
+    MLPKCS7Padding		= 1,
+};
+typedef uint32_t MLPadding;
+
+
+/** MLMode加密的模型如，CBC，ECB等 */
+@property (nonatomic, assign) MLMode mode;
+
+/** MLAlgorithm采用什么加密，如AES,DES等 */
+@property (nonatomic, assign) MLAlgorithm alg;
+
+/** MLPadding填充方式，如MLPKCS7Padding，等 */
+@property (nonatomic, assign) MLPadding padding;
 
 /** iv加密的向量 */
 @property (nonatomic, assign) const void *iv;
@@ -44,8 +102,8 @@
 @property (nonatomic, assign) int numRounds;
 
 
-/** CCModeOptions如kCCModeOptionCTR_LE，kCCModeOptionCTR_BE */
-@property (nonatomic, assign) CCModeOptions options;
+/** MLModeOptions如kMLModeOptionCTR_LE，kMLModeOptionCTR_BE */
+@property (nonatomic, assign) MLModeOptions options;
 
 
 
@@ -107,7 +165,7 @@ typedef uint32_t ivMode;
  *  @param op          加密或解密
  *  @param mode        加密模式，如CBC,EBC等
  *  @param alg         加密方式，如AES,DES等
- *  @param padding     填充方式，如ccPKCS7Padding等
+ *  @param padding     填充方式，如MLPKCS7Padding等
  *  @param iv          加密向量
  *  @param key         加密密钥
  *  @param keySize     密钥长度如，kMLKeySizeAES128等
@@ -119,8 +177,8 @@ typedef uint32_t ivMode;
  *
  *  @return 加密或解密后的数据Data
  */
-- (NSData *)cryptorAllParasCommonMethodWihtData:(NSData *)textData Operation:(CCOperation)op Mode:(CCMode)mode Algorithm:(CCAlgorithm)alg Padding:(CCPadding)padding iv:(const void *)iv kCCBlockSize:(MLIvSize)kCCBlockSize key:(const void *)key keySize:(MLKeySize)keySize tweak:(const void *)tweak tweakLength:(MLKeySize)tweakLength numRounds:(int)numRounds ModeOptions:(CCModeOptions)options;
+- (NSData *)cryptorAllParasCommonMethodWihtData:(NSData *)textData Operation:(MLOperation)op Mode:(MLMode)mode Algorithm:(MLAlgorithm)alg Padding:(MLPadding)padding iv:(const void *)iv kCCBlockSize:(MLIvSize)kCCBlockSize key:(const void *)key keySize:(MLKeySize)keySize tweak:(const void *)tweak tweakLength:(MLKeySize)tweakLength numRounds:(int)numRounds ModeOptions:(MLModeOptions)options;
 
-- (NSData *)cryptorCommonMethodWihtData:(NSData *)textData MLOperation:(CCOperation)op Algorithm:(CCAlgorithm)alg iv:(const void *)iv key:(const void *)key keySize:(MLKeySize)keySize kCCBlockSize:(MLIvSize)kCCBlockSize;
+- (NSData *)cryptorCommonMethodWihtData:(NSData *)textData MLOperation:(MLOperation)op Algorithm:(MLAlgorithm)alg iv:(const void *)iv key:(const void *)key keySize:(MLKeySize)keySize kCCBlockSize:(MLIvSize)kCCBlockSize;
 
 @end

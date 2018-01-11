@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		587B37B8200678B800401EFA /* MLCryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 587B37A5200678B800401EFA /* MLCryption.m */; };
+		587B37B9200678B800401EFA /* MLCryption_3DES.m in Sources */ = {isa = PBXBuildFile; fileRef = 587B37A7200678B800401EFA /* MLCryption_3DES.m */; };
+		587B37BA200678B800401EFA /* MLCryption_AES128.m in Sources */ = {isa = PBXBuildFile; fileRef = 587B37A9200678B800401EFA /* MLCryption_AES128.m */; };
+		587B37BB200678B800401EFA /* MLCryption_Blowfish.m in Sources */ = {isa = PBXBuildFile; fileRef = 587B37AB200678B800401EFA /* MLCryption_Blowfish.m */; };
+		587B37BC200678B800401EFA /* MLCryption_CAST.m in Sources */ = {isa = PBXBuildFile; fileRef = 587B37AD200678B800401EFA /* MLCryption_CAST.m */; };
+		587B37BD200678B800401EFA /* MLCryption_DES.m in Sources */ = {isa = PBXBuildFile; fileRef = 587B37AF200678B800401EFA /* MLCryption_DES.m */; };
+		587B37BE200678B800401EFA /* MLCryption_RC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 587B37B1200678B800401EFA /* MLCryption_RC2.m */; };
+		587B37BF200678B800401EFA /* MLCryptionCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 587B37B3200678B800401EFA /* MLCryptionCommon.m */; };
+		587B37C0200678B800401EFA /* MLCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 587B37B5200678B800401EFA /* MLCryptor.m */; };
+		587B37C1200678B800401EFA /* NSObject+MLCryptionBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 587B37B7200678B800401EFA /* NSObject+MLCryptionBase64.m */; };
 		5897312D1FFBD538003318AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5897312C1FFBD538003318AF /* main.m */; };
 		589731301FFBD538003318AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5897312F1FFBD538003318AF /* AppDelegate.m */; };
 		589731331FFBD538003318AF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589731321FFBD538003318AF /* ViewController.m */; };
@@ -15,16 +25,6 @@
 		5897313B1FFBD538003318AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 589731391FFBD538003318AF /* LaunchScreen.storyboard */; };
 		589731461FFBD539003318AF /* MLCryptionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 589731451FFBD539003318AF /* MLCryptionDemoTests.m */; };
 		589731511FFBD539003318AF /* MLCryptionDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 589731501FFBD539003318AF /* MLCryptionDemoUITests.m */; };
-		589FE98320051A4C00C59084 /* MLCryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 589FE97020051A4C00C59084 /* MLCryption.m */; };
-		589FE98420051A4C00C59084 /* MLCryption_3DES.m in Sources */ = {isa = PBXBuildFile; fileRef = 589FE97220051A4C00C59084 /* MLCryption_3DES.m */; };
-		589FE98520051A4C00C59084 /* MLCryption_AES128.m in Sources */ = {isa = PBXBuildFile; fileRef = 589FE97420051A4C00C59084 /* MLCryption_AES128.m */; };
-		589FE98620051A4C00C59084 /* MLCryption_Blowfish.m in Sources */ = {isa = PBXBuildFile; fileRef = 589FE97620051A4C00C59084 /* MLCryption_Blowfish.m */; };
-		589FE98720051A4C00C59084 /* MLCryption_CAST.m in Sources */ = {isa = PBXBuildFile; fileRef = 589FE97820051A4C00C59084 /* MLCryption_CAST.m */; };
-		589FE98820051A4C00C59084 /* MLCryption_DES.m in Sources */ = {isa = PBXBuildFile; fileRef = 589FE97A20051A4C00C59084 /* MLCryption_DES.m */; };
-		589FE98920051A4C00C59084 /* MLCryption_RC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 589FE97C20051A4C00C59084 /* MLCryption_RC2.m */; };
-		589FE98A20051A4C00C59084 /* MLCryptionCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 589FE97E20051A4C00C59084 /* MLCryptionCommon.m */; };
-		589FE98B20051A4C00C59084 /* MLCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 589FE98020051A4C00C59084 /* MLCryptor.m */; };
-		589FE98C20051A4C00C59084 /* NSObject+MLCryptionBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 589FE98220051A4C00C59084 /* NSObject+MLCryptionBase64.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +45,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		587B37A4200678B800401EFA /* MLCryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption.h; sourceTree = "<group>"; };
+		587B37A5200678B800401EFA /* MLCryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption.m; sourceTree = "<group>"; };
+		587B37A6200678B800401EFA /* MLCryption_3DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption_3DES.h; sourceTree = "<group>"; };
+		587B37A7200678B800401EFA /* MLCryption_3DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption_3DES.m; sourceTree = "<group>"; };
+		587B37A8200678B800401EFA /* MLCryption_AES128.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption_AES128.h; sourceTree = "<group>"; };
+		587B37A9200678B800401EFA /* MLCryption_AES128.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption_AES128.m; sourceTree = "<group>"; };
+		587B37AA200678B800401EFA /* MLCryption_Blowfish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption_Blowfish.h; sourceTree = "<group>"; };
+		587B37AB200678B800401EFA /* MLCryption_Blowfish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption_Blowfish.m; sourceTree = "<group>"; };
+		587B37AC200678B800401EFA /* MLCryption_CAST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption_CAST.h; sourceTree = "<group>"; };
+		587B37AD200678B800401EFA /* MLCryption_CAST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption_CAST.m; sourceTree = "<group>"; };
+		587B37AE200678B800401EFA /* MLCryption_DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption_DES.h; sourceTree = "<group>"; };
+		587B37AF200678B800401EFA /* MLCryption_DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption_DES.m; sourceTree = "<group>"; };
+		587B37B0200678B800401EFA /* MLCryption_RC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption_RC2.h; sourceTree = "<group>"; };
+		587B37B1200678B800401EFA /* MLCryption_RC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption_RC2.m; sourceTree = "<group>"; };
+		587B37B2200678B800401EFA /* MLCryptionCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryptionCommon.h; sourceTree = "<group>"; };
+		587B37B3200678B800401EFA /* MLCryptionCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryptionCommon.m; sourceTree = "<group>"; };
+		587B37B4200678B800401EFA /* MLCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryptor.h; sourceTree = "<group>"; };
+		587B37B5200678B800401EFA /* MLCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryptor.m; sourceTree = "<group>"; };
+		587B37B6200678B800401EFA /* NSObject+MLCryptionBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MLCryptionBase64.h"; sourceTree = "<group>"; };
+		587B37B7200678B800401EFA /* NSObject+MLCryptionBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MLCryptionBase64.m"; sourceTree = "<group>"; };
 		589731281FFBD538003318AF /* MLCryptionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLCryptionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5897312C1FFBD538003318AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5897312E1FFBD538003318AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = MLCryptionDemo/AppDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -61,26 +81,6 @@
 		5897314C1FFBD539003318AF /* MLCryptionDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MLCryptionDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		589731501FFBD539003318AF /* MLCryptionDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLCryptionDemoUITests.m; sourceTree = "<group>"; };
 		589731521FFBD539003318AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		589FE96F20051A4C00C59084 /* MLCryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption.h; sourceTree = "<group>"; };
-		589FE97020051A4C00C59084 /* MLCryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption.m; sourceTree = "<group>"; };
-		589FE97120051A4C00C59084 /* MLCryption_3DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption_3DES.h; sourceTree = "<group>"; };
-		589FE97220051A4C00C59084 /* MLCryption_3DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption_3DES.m; sourceTree = "<group>"; };
-		589FE97320051A4C00C59084 /* MLCryption_AES128.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption_AES128.h; sourceTree = "<group>"; };
-		589FE97420051A4C00C59084 /* MLCryption_AES128.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption_AES128.m; sourceTree = "<group>"; };
-		589FE97520051A4C00C59084 /* MLCryption_Blowfish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption_Blowfish.h; sourceTree = "<group>"; };
-		589FE97620051A4C00C59084 /* MLCryption_Blowfish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption_Blowfish.m; sourceTree = "<group>"; };
-		589FE97720051A4C00C59084 /* MLCryption_CAST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption_CAST.h; sourceTree = "<group>"; };
-		589FE97820051A4C00C59084 /* MLCryption_CAST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption_CAST.m; sourceTree = "<group>"; };
-		589FE97920051A4C00C59084 /* MLCryption_DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption_DES.h; sourceTree = "<group>"; };
-		589FE97A20051A4C00C59084 /* MLCryption_DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption_DES.m; sourceTree = "<group>"; };
-		589FE97B20051A4C00C59084 /* MLCryption_RC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryption_RC2.h; sourceTree = "<group>"; };
-		589FE97C20051A4C00C59084 /* MLCryption_RC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryption_RC2.m; sourceTree = "<group>"; };
-		589FE97D20051A4C00C59084 /* MLCryptionCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryptionCommon.h; sourceTree = "<group>"; };
-		589FE97E20051A4C00C59084 /* MLCryptionCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryptionCommon.m; sourceTree = "<group>"; };
-		589FE97F20051A4C00C59084 /* MLCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCryptor.h; sourceTree = "<group>"; };
-		589FE98020051A4C00C59084 /* MLCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCryptor.m; sourceTree = "<group>"; };
-		589FE98120051A4C00C59084 /* NSObject+MLCryptionBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MLCryptionBase64.h"; sourceTree = "<group>"; };
-		589FE98220051A4C00C59084 /* NSObject+MLCryptionBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MLCryptionBase64.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +108,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		587B37A3200678B800401EFA /* MLCryption */ = {
+			isa = PBXGroup;
+			children = (
+				587B37A4200678B800401EFA /* MLCryption.h */,
+				587B37A5200678B800401EFA /* MLCryption.m */,
+				587B37A6200678B800401EFA /* MLCryption_3DES.h */,
+				587B37A7200678B800401EFA /* MLCryption_3DES.m */,
+				587B37A8200678B800401EFA /* MLCryption_AES128.h */,
+				587B37A9200678B800401EFA /* MLCryption_AES128.m */,
+				587B37AA200678B800401EFA /* MLCryption_Blowfish.h */,
+				587B37AB200678B800401EFA /* MLCryption_Blowfish.m */,
+				587B37AC200678B800401EFA /* MLCryption_CAST.h */,
+				587B37AD200678B800401EFA /* MLCryption_CAST.m */,
+				587B37AE200678B800401EFA /* MLCryption_DES.h */,
+				587B37AF200678B800401EFA /* MLCryption_DES.m */,
+				587B37B0200678B800401EFA /* MLCryption_RC2.h */,
+				587B37B1200678B800401EFA /* MLCryption_RC2.m */,
+				587B37B2200678B800401EFA /* MLCryptionCommon.h */,
+				587B37B3200678B800401EFA /* MLCryptionCommon.m */,
+				587B37B4200678B800401EFA /* MLCryptor.h */,
+				587B37B5200678B800401EFA /* MLCryptor.m */,
+				587B37B6200678B800401EFA /* NSObject+MLCryptionBase64.h */,
+				587B37B7200678B800401EFA /* NSObject+MLCryptionBase64.m */,
+			);
+			name = MLCryption;
+			path = ../../MLCryption;
+			sourceTree = "<group>";
+		};
 		5897311F1FFBD538003318AF = {
 			isa = PBXGroup;
 			children = (
@@ -131,7 +159,7 @@
 		5897312A1FFBD538003318AF /* MLCryptionDemo */ = {
 			isa = PBXGroup;
 			children = (
-				589FE96E20051A4C00C59084 /* MLCryption */,
+				587B37A3200678B800401EFA /* MLCryption */,
 				5897312E1FFBD538003318AF /* AppDelegate.h */,
 				5897312F1FFBD538003318AF /* AppDelegate.m */,
 				589731311FFBD538003318AF /* ViewController.h */,
@@ -169,34 +197,6 @@
 				589731521FFBD539003318AF /* Info.plist */,
 			);
 			path = MLCryptionDemoUITests;
-			sourceTree = "<group>";
-		};
-		589FE96E20051A4C00C59084 /* MLCryption */ = {
-			isa = PBXGroup;
-			children = (
-				589FE96F20051A4C00C59084 /* MLCryption.h */,
-				589FE97020051A4C00C59084 /* MLCryption.m */,
-				589FE97D20051A4C00C59084 /* MLCryptionCommon.h */,
-				589FE97E20051A4C00C59084 /* MLCryptionCommon.m */,
-				589FE97F20051A4C00C59084 /* MLCryptor.h */,
-				589FE98020051A4C00C59084 /* MLCryptor.m */,
-				589FE97920051A4C00C59084 /* MLCryption_DES.h */,
-				589FE97A20051A4C00C59084 /* MLCryption_DES.m */,
-				589FE97120051A4C00C59084 /* MLCryption_3DES.h */,
-				589FE97220051A4C00C59084 /* MLCryption_3DES.m */,
-				589FE97320051A4C00C59084 /* MLCryption_AES128.h */,
-				589FE97420051A4C00C59084 /* MLCryption_AES128.m */,
-				589FE97720051A4C00C59084 /* MLCryption_CAST.h */,
-				589FE97820051A4C00C59084 /* MLCryption_CAST.m */,
-				589FE97B20051A4C00C59084 /* MLCryption_RC2.h */,
-				589FE97C20051A4C00C59084 /* MLCryption_RC2.m */,
-				589FE97520051A4C00C59084 /* MLCryption_Blowfish.h */,
-				589FE97620051A4C00C59084 /* MLCryption_Blowfish.m */,
-				589FE98120051A4C00C59084 /* NSObject+MLCryptionBase64.h */,
-				589FE98220051A4C00C59084 /* NSObject+MLCryptionBase64.m */,
-			);
-			name = MLCryption;
-			path = ../../MLCryption;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,19 +329,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				589FE98320051A4C00C59084 /* MLCryption.m in Sources */,
+				587B37B8200678B800401EFA /* MLCryption.m in Sources */,
 				589731331FFBD538003318AF /* ViewController.m in Sources */,
-				589FE98C20051A4C00C59084 /* NSObject+MLCryptionBase64.m in Sources */,
-				589FE98520051A4C00C59084 /* MLCryption_AES128.m in Sources */,
+				587B37C1200678B800401EFA /* NSObject+MLCryptionBase64.m in Sources */,
+				587B37BA200678B800401EFA /* MLCryption_AES128.m in Sources */,
 				589731301FFBD538003318AF /* AppDelegate.m in Sources */,
-				589FE98620051A4C00C59084 /* MLCryption_Blowfish.m in Sources */,
-				589FE98420051A4C00C59084 /* MLCryption_3DES.m in Sources */,
-				589FE98A20051A4C00C59084 /* MLCryptionCommon.m in Sources */,
-				589FE98920051A4C00C59084 /* MLCryption_RC2.m in Sources */,
-				589FE98820051A4C00C59084 /* MLCryption_DES.m in Sources */,
+				587B37BB200678B800401EFA /* MLCryption_Blowfish.m in Sources */,
+				587B37B9200678B800401EFA /* MLCryption_3DES.m in Sources */,
+				587B37BF200678B800401EFA /* MLCryptionCommon.m in Sources */,
+				587B37BE200678B800401EFA /* MLCryption_RC2.m in Sources */,
+				587B37BD200678B800401EFA /* MLCryption_DES.m in Sources */,
 				5897312D1FFBD538003318AF /* main.m in Sources */,
-				589FE98B20051A4C00C59084 /* MLCryptor.m in Sources */,
-				589FE98720051A4C00C59084 /* MLCryption_CAST.m in Sources */,
+				587B37C0200678B800401EFA /* MLCryptor.m in Sources */,
+				587B37BC200678B800401EFA /* MLCryption_CAST.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,10 +480,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = MLCryptionDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mantai.com.MLCryptionDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SHARED_PRECOMPS_DIR = "";
 			};
 			name = Debug;
 		};
@@ -491,10 +495,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = MLCryptionDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mantai.com.MLCryptionDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SHARED_PRECOMPS_DIR = "";
 			};
 			name = Release;
 		};
