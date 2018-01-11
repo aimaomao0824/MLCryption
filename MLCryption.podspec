@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "MLCryption"
-s.version      = "1.0.0"
+s.version      = "1.0.2"
 s.summary      = "This is an easy to use encryption tools"
 s.homepage     = "https://github.com/limao0824/MLCryption"
 s.license      = "MIT"
