@@ -8,9 +8,9 @@
 
 # 目录 
 
-* [一、MLCryption介绍](#一、MLCryption介绍)
+* [一、MLCryption介绍](#Getting_Started)
    * [1.1 能做什么](#Features)
-   * [1.2 怎么安装](#1.2 安装使用)
+   * [1.2 怎么安装](#Installation)
 * [二、单个加密器使用示例代码](#Examples)
    * [DES加密](#JSON_Model)
    * [3DES加密](#JSONString_Model)
@@ -26,7 +26,7 @@
 
 # <a id="Getting_Started"></a> 一、MLCryption介绍
 
-## <a id="Features"></a> Features【1.1 能做什么】
+## <a id="Features"></a> 1.1 能做什么
 - MJExtension是一套字典和模型之间互相转换的超轻量级框架
 * 只需要一行代码，就能实现模型的所有属性进行Coding（归档和解档）
 
